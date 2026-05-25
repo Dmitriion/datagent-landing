@@ -92,7 +92,17 @@ chmod +x scripts/test-env.sh
 - `http://127.0.0.1:8080/` — localhost
 - `http://<LAN-IP>:8080/` — IP из `hostname -I` (в Cursor — forwarded port)
 
-В облаке агента Docker build/run может быть недоступен; скрипт переключится на **host nginx** (`docker/nginx.dev.conf`). Автозапуск: `.cursor/environment.json`, tmux-сессия `datagent-landing-dev`.
+В облаке агента Docker build/run может быть недоступен; скрипт переключится на **host nginx** (`docker/nginx.dev.conf`).
+
+**Cursor Cloud Environment** (автозапуск при старте агента):
+
+```bash
+./scripts/cloud-dev-up.sh start      # фон (install/start hook)
+./scripts/cloud-dev-up.sh foreground # терминал, держит процесс
+./scripts/cloud-dev-up.sh status
+```
+
+Конфиг: `.cursor/environment.json` → `install` + `start` + терминал `datagent-landing`.
 
 ### Агентная разработка (Cursor)
 
