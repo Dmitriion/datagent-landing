@@ -10,7 +10,21 @@
     <title>Datagent — AI-оркестратор бизнес-процессов</title>
 
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/assets/img/hero-product.svg"
+      as="image"
+      type="image/svg+xml"
+      fetchpriority="high"
+    />
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Datagent — AI-оркестратор бизнес-процессов" />
+    <meta
+      property="og:description"
+      content="Автоматизируйте бизнес-процессы агентами. Запросите демо Datagent."
+    />
+    <meta property="og:locale" content="ru_RU" />
     <link
       href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap"
       rel="stylesheet"
@@ -251,21 +265,36 @@
           <p class="section__lead">
             Оставьте контакт — вернёмся в течение 1 рабочего дня. Цель: ≥ 10 заявок за первые 30 дней.
           </p>
-          <form class="cta-form" data-demo-form action="#" method="post" novalidate>
-            <label>
-              Имя
-              <input type="text" name="name" required autocomplete="name" placeholder="Как к вам обращаться" />
-            </label>
-            <label>
-              Email или телефон
+          <form class="cta-form" id="demo-form" data-demo-form action="#" method="post" novalidate>
+            <div class="field">
+              <label for="demo-name">Имя</label>
               <input
                 type="text"
+                id="demo-name"
+                name="name"
+                required
+                autocomplete="name"
+                placeholder="Как к вам обращаться"
+                aria-errormessage="demo-name-error"
+              />
+              <div id="demo-name-error" class="field__error" role="alert">Укажите имя</div>
+            </div>
+            <div class="field">
+              <label for="demo-contact">Email или телефон</label>
+              <input
+                type="text"
+                id="demo-contact"
                 name="contact"
                 required
                 autocomplete="email"
+                inputmode="email"
                 placeholder="you@company.ru"
+                aria-errormessage="demo-contact-error"
               />
-            </label>
+              <div id="demo-contact-error" class="field__error" role="alert">
+                Укажите email или телефон
+              </div>
+            </div>
             <button type="submit" class="btn btn--primary" data-cta="demo">Запросить демо</button>
           </form>
         </div>
