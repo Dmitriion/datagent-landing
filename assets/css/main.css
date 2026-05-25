@@ -186,6 +186,7 @@
   background: var(--color-hero-bg);
   color: var(--color-hero-text);
   contain: layout style;
+  border-bottom: 1px solid color-mix(in oklch, var(--color-text-inverse) 8%, transparent);
 }
 
 .hero--dark::before {
@@ -193,17 +194,7 @@
   position: absolute;
   inset: -20% 10% auto -10%;
   height: 70%;
-  background:
-    radial-gradient(ellipse 55% 70% at 50% 50%, var(--color-primary-glow), transparent 70%),
-    linear-gradient(
-      oklch(0.97 0.01 95 / 0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, oklch(0.97 0.01 95 / 0.03) 1px, transparent 1px);
-  background-size:
-    auto,
-    2.5rem 2.5rem,
-    2.5rem 2.5rem;
+  background: radial-gradient(ellipse 55% 70% at 50% 50%, var(--color-primary-glow), transparent 70%);
   pointer-events: none;
 }
 
@@ -625,9 +616,8 @@
 
 /* Logo strip — Ask-AI / Trello integrations row */
 .logo-strip {
-  border-bottom: 1px solid color-mix(in oklch, var(--color-text-inverse) 8%, var(--color-border));
-  background: var(--color-hero-bg);
-  color: var(--color-hero-muted);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
 }
 
 .logo-strip__inner {
@@ -653,7 +643,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: color-mix(in oklch, var(--color-text-inverse) 45%, transparent);
+  color: var(--color-text-muted);
   white-space: nowrap;
 }
 
@@ -671,23 +661,22 @@
   display: inline-flex;
   padding: 0.4rem 0.85rem;
   border-radius: var(--radius-pill);
-  border: 1px solid color-mix(in oklch, var(--color-text-inverse) 12%, transparent);
-  background: oklch(0.22 0.02 250 / 0.5);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-elevated);
   font-size: var(--text-small);
   font-weight: 600;
-  color: var(--color-hero-text);
+  color: var(--color-text);
 }
 
 .logo-strip__pill--muted {
-  color: var(--color-hero-muted);
-  border-style: dashed;
+  color: var(--color-text-muted);
+  background: transparent;
 }
 
 /* Trust bar */
 .trust-bar {
   border-bottom: 1px solid var(--color-border);
-  background: var(--color-surface-elevated);
-  box-shadow: 0 1px 0 color-mix(in oklch, var(--color-bg) 80%, transparent);
+  background: var(--color-bg);
 }
 
 .trust-bar__grid {
@@ -737,7 +726,7 @@
 }
 
 .trust-bar__icon--speed {
-  background: linear-gradient(135deg, var(--color-primary-soft), color-mix(in oklch, var(--color-accent) 40%, var(--color-primary-soft)));
+  background: var(--color-primary-soft);
 }
 
 .trust-bar__icon--link::after,
@@ -811,27 +800,10 @@
   flex: 1;
   min-height: 100%;
   padding: var(--space-xl);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--color-border);
-  background: var(--color-surface-elevated);
-  box-shadow: var(--shadow-sm);
-  transition:
-    transform var(--duration) var(--ease-out),
-    box-shadow var(--duration) var(--ease-out),
-    border-color var(--duration) var(--ease-out);
-}
-
-@media (hover: hover) {
-  .pain-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-    border-color: color-mix(in oklch, var(--color-primary) 28%, var(--color-border));
-  }
 }
 
 .pain-card--emphasis {
-  border-color: color-mix(in oklch, var(--color-primary) 35%, var(--color-border));
-  box-shadow: var(--shadow-md);
+  border-color: color-mix(in oklch, var(--color-primary) 40%, var(--color-border));
 }
 
 .pain-card__head {
@@ -900,19 +872,16 @@
 .pain-card__metric {
   padding: 0.3rem 0.65rem;
   border-radius: var(--radius-pill);
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
+  background: var(--color-inset);
   font-size: 0.6875rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   color: var(--color-text-muted);
   white-space: nowrap;
 }
 
 .pain-card--emphasis .pain-card__metric {
   background: var(--color-primary-soft);
-  border-color: color-mix(in oklch, var(--color-primary) 25%, transparent);
   color: var(--color-primary);
 }
 
@@ -929,100 +898,6 @@
   color: var(--color-text-muted);
   line-height: 1.6;
   font-size: var(--text-small);
-}
-
-/* Mini UI scenes (product-style footers on cards) */
-.pain-card__viz {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.45rem;
-  margin-top: var(--space-lg);
-  padding: 0.75rem;
-  border-radius: var(--radius-md);
-  background: var(--color-bg-alt);
-  border: 1px dashed var(--color-border);
-  font-size: 0.6875rem;
-}
-
-.pain-card__viz-label {
-  font-weight: 700;
-  color: var(--color-text-muted);
-}
-
-.pain-card__viz-bubble {
-  flex: 1;
-  min-width: 8rem;
-  padding: 0.45rem 0.6rem;
-  border-radius: 0.65rem 0.65rem 0.65rem 0.15rem;
-  background: var(--color-surface-elevated);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-xs);
-}
-
-.pain-card__viz-bubble span {
-  display: block;
-  font-weight: 600;
-  color: var(--color-text);
-}
-
-.pain-card__viz-bubble time {
-  display: block;
-  margin-top: 0.15rem;
-  color: var(--color-text-muted);
-}
-
-.pain-card__viz-status {
-  width: 100%;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius-sm);
-  background: oklch(0.94 0.05 25);
-  color: oklch(0.45 0.14 25);
-  font-weight: 700;
-  text-align: center;
-}
-
-.pain-card__viz--night {
-  justify-content: space-between;
-}
-
-.pain-card__viz-clock {
-  font-family: var(--font-display);
-  font-size: 1.125rem;
-  font-weight: 800;
-  color: var(--color-text);
-}
-
-.pain-card__viz-arrow {
-  color: var(--color-text-muted);
-  font-weight: 700;
-}
-
-.pain-card__viz-competitor {
-  padding: 0.35rem 0.55rem;
-  border-radius: var(--radius-sm);
-  background: oklch(0.55 0.14 25 / 0.12);
-  color: oklch(0.45 0.14 25);
-  font-weight: 700;
-}
-
-.pain-card__viz-pane {
-  padding: 0.35rem 0.6rem;
-  border-radius: var(--radius-sm);
-  background: var(--color-surface-elevated);
-  border: 1px solid var(--color-border);
-  font-weight: 600;
-  color: var(--color-text-muted);
-}
-
-.pain-card__viz-pane--crm {
-  color: var(--color-primary);
-  border-color: color-mix(in oklch, var(--color-primary) 35%, var(--color-border));
-  background: var(--color-primary-soft);
-}
-
-.pain-card__viz--manual {
-  justify-content: center;
 }
 
 /* Solution — equal-height cards */
@@ -1049,9 +924,6 @@
   flex: 1;
   min-height: 100%;
   padding: var(--space-xl);
-  transition:
-    box-shadow var(--duration) var(--ease-out),
-    border-color var(--duration) var(--ease-out);
 }
 
 .scenario-card__icon {
@@ -1124,12 +996,6 @@
 .flow-panel {
   padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
   border-radius: var(--radius-xl);
-  background: linear-gradient(
-    165deg,
-    color-mix(in oklch, var(--color-primary-soft) 35%, var(--color-surface-elevated)) 0%,
-    var(--color-surface-elevated) 42%
-  );
-  border: 1px solid color-mix(in oklch, var(--color-primary) 18%, var(--color-border));
 }
 
 .flow {
@@ -1157,7 +1023,7 @@
     margin-top: 1.35rem;
     width: 2.5rem;
     height: 2px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-border));
+    background: var(--color-border);
     border-radius: var(--radius-pill);
   }
 }
@@ -1285,7 +1151,7 @@
   padding: 0.2rem;
   border-radius: var(--radius-pill);
   border: 1px solid var(--color-border);
-  background: var(--color-bg-alt);
+  background: var(--color-inset);
 }
 
 .pricing-billing__option {
@@ -1343,21 +1209,15 @@
 }
 
 .plan--featured {
-  border: 2px solid var(--color-primary);
-  box-shadow: var(--shadow-md);
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklch, var(--color-primary-soft) 55%, var(--color-surface-elevated)) 0%,
-    var(--color-surface-elevated) 28%
-  );
+  border-width: 2px;
+  border-color: var(--color-primary);
 }
 
 @media (min-width: 56rem) {
   .plan--featured {
-    margin-block: -0.5rem;
-    padding-block: calc(var(--space-xl) + 0.5rem);
+    margin-block: -0.35rem;
+    padding-block: calc(var(--space-xl) + 0.35rem);
     z-index: 1;
-    box-shadow: var(--shadow-lg);
   }
 }
 
@@ -1607,9 +1467,7 @@
 .cta__panel {
   padding: var(--space-xl);
   border-radius: var(--radius-xl);
-  background: var(--color-surface-elevated);
   color: var(--color-text);
-  box-shadow: var(--shadow-lg);
 }
 
 .cta__panel-title {
