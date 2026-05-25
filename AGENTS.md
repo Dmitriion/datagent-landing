@@ -1,31 +1,25 @@
 # AGENTS.md
 
-This project's Baseline target is **Baseline 2024**.
+Baseline target: **Baseline 2024**.
 
 ## Stack
 
-- Semantic HTML5 only — no React, Vue, or build tools
-- Modern CSS: `oklch()`, `clamp()`, nesting, container queries where useful
-- Vanilla ES modules pattern via single deferred `assets/js/main.js`
-- Fonts: Fontshare (Satoshi + Cabinet Grotesk)
+- Semantic HTML5 + `assets/` (no build step for content)
+- **Deploy:** Docker + nginx (see `Dockerfile`, `docker-compose.yml`)
+- No React, Vite, Tailwind, npm for the landing itself
 
 ## Rules
 
-- Do not add npm dependencies without explicit discussion
-- Do not introduce Vite, Webpack, or Tailwind
-- Performance: LCP &lt; 1.5s, CLS &lt; 0.1 — hero image uses `loading="eager"` and `fetchpriority="high"`
-- Accessibility: WCAG AA contrast, keyboard nav, `aria-label` on icon-only controls
-- Respect `prefers-reduced-motion`
-- Copy changes use commit prefix `copy:`; custdev blocks (Hero, Problem) change only with hypothesis or interview data
-
-## File map
-
-- `index.html` — full landing
-- `assets/css/tokens.css` — design tokens
-- `assets/css/base.css` — reset and utilities
-- `assets/css/main.css` — components
-- `assets/js/main.js` — theme, form stub, Metrika goals
+- **Do not** add GitHub Pages or `CNAME` for Pages — repo stays private
+- `ops:` commits for Docker/nginx/CI changes; `copy:` for marketing text
+- Performance: LCP &lt; 1.5s, hero `loading="eager"` + `fetchpriority="high"`
+- Verify with `docker compose up --build` before claiming deploy works
 
 ## Deploy
 
-Push to `main` triggers GitHub Pages (~30–60s). Custom domain: `CNAME` → datagent.ru.
+```bash
+docker compose up --build   # local :8080
+docker build -t datagent-landing .   # production image
+```
+
+Production: container on VPS + reverse proxy (Caddy/Traefik) for datagent.ru.
