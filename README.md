@@ -78,16 +78,21 @@ docker compose down
 
 ### Тестовая среда в Cursor Cloud
 
-В облаке агента Docker build/run может быть недоступен (overlay). Используйте скрипт — он поднимет **nginx на хосте** с тем же `root`, что и контейнер:
+Dev-сервер слушает **все интерфейсы** (`0.0.0.0:8080`):
 
 ```bash
+cp .env.example .env
 chmod +x scripts/test-env.sh
-./scripts/test-env.sh start
-# → http://127.0.0.1:8080/
+./scripts/test-env.sh start    # выведет url_local и url_lan
+./scripts/test-env.sh status
 ./scripts/test-env.sh stop
 ```
 
-Конфиг: `docker/nginx.dev.conf`. Для Cursor при открытии репозитория см. `.cursor/environment.json`.
+Примеры URL после `start`:
+- `http://127.0.0.1:8080/` — localhost
+- `http://<LAN-IP>:8080/` — IP из `hostname -I` (в Cursor — forwarded port)
+
+В облаке агента Docker build/run может быть недоступен; скрипт переключится на **host nginx** (`docker/nginx.dev.conf`). Автозапуск: `.cursor/environment.json`, tmux-сессия `datagent-landing-dev`.
 
 ### Агентная разработка (Cursor)
 

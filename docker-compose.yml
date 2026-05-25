@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     image: datagent-landing:local
     ports:
-      - "${LANDING_PORT:-8080}:80"
+      - "0.0.0.0:${LANDING_PORT:-8080}:80"
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/"]
