@@ -124,9 +124,44 @@ function initHeaderScroll() {
   window.addEventListener('scroll', onScroll, { passive: true })
 }
 
+/** Raycast / Mozi: monthly ↔ yearly price toggle */
+function initPricingBilling() {
+  const root = document.querySelector('[data-pricing-billing]')
+  if (!root) return
+
+  const buttons = root.querySelectorAll('[data-billing]')
+  const amounts = document.querySelectorAll('[data-price-monthly]')
+  const periodLabels = document.querySelectorAll('[data-period-label]')
+
+  const apply = (yearly) => {
+    buttons.forEach((btn) => {
+      const isYearly = btn.getAttribute('data-billing') === 'yearly'
+      const active = yearly ? isYearly : !isYearly
+      btn.classList.toggle('is-active', active)
+      btn.setAttribute('aria-pressed', String(active))
+    })
+
+    amounts.forEach((el) => {
+      const value = yearly ? el.getAttribute('data-price-yearly') : el.getAttribute('data-price-monthly')
+      if (value) el.textContent = value
+    })
+
+    periodLabels.forEach((el) => {
+      el.textContent = yearly ? '/ мес при оплате за год' : '/ мес'
+    })
+  }
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      apply(btn.getAttribute('data-billing') === 'yearly')
+    })
+  })
+}
+
 function init() {
   initTheme()
   initHeaderScroll()
+  initPricingBilling()
   initDemoForm()
   trackCtaClicks()
 }

@@ -163,6 +163,20 @@
         </div>
       </section>
 
+      <!-- Интеграции (Ask-AI / Trello: logo strip) -->
+      <section class="logo-strip band" aria-label="Интеграции и стек">
+        <div class="container logo-strip__inner">
+          <p class="logo-strip__label">Работает с вашим стеком</p>
+          <ul class="logo-strip__list">
+            <li><span class="logo-strip__pill">Битрикс24</span></li>
+            <li><span class="logo-strip__pill">Telegram</span></li>
+            <li><span class="logo-strip__pill">GigaChat</span></li>
+            <li><span class="logo-strip__pill">YandexGPT</span></li>
+            <li><span class="logo-strip__pill logo-strip__pill--muted">amoCRM · скоро</span></li>
+          </ul>
+        </div>
+      </section>
+
       <!-- [C] TRUST BAR -->
       <section class="trust-bar band band--surface" aria-label="Преимущества">
         <div class="container">
@@ -200,6 +214,7 @@
           <ul class="pain-grid">
             <li>
               <article class="pain-card surface">
+                <span class="pain-card__icon pain-card__icon--loss" aria-hidden="true"></span>
                 <h3>Лиды теряются</h3>
                 <p>
                   Клиент написал в Telegram в 23:00. Утром уже поздно — вы потеряли сделку.
@@ -208,6 +223,7 @@
             </li>
             <li>
               <article class="pain-card surface">
+                <span class="pain-card__icon pain-card__icon--night" aria-hidden="true"></span>
                 <h3>Работа по ночам</h3>
                 <p>
                   Менеджер офлайн — клиент ушёл к конкуренту. Вы узнаёте об этом только утром.
@@ -216,6 +232,7 @@
             </li>
             <li>
               <article class="pain-card surface">
+                <span class="pain-card__icon pain-card__icon--manual" aria-hidden="true"></span>
                 <h3>Ручная работа</h3>
                 <p>
                   Каждый диалог из Telegram вручную переносится в CRM. До 3 часов в день — впустую.
@@ -236,6 +253,7 @@
           <ul class="scenario-grid">
             <li>
               <article class="scenario-card surface">
+                <span class="scenario-card__icon scenario-card__icon--chat" aria-hidden="true"></span>
                 <div class="scenario-card__head">
                   <span class="scenario-card__index" aria-hidden="true">01</span>
                   <span class="scenario-card__result">0 потерянных лидов</span>
@@ -249,6 +267,7 @@
             </li>
             <li>
               <article class="scenario-card surface">
+                <span class="scenario-card__icon scenario-card__icon--crm" aria-hidden="true"></span>
                 <div class="scenario-card__head">
                   <span class="scenario-card__index" aria-hidden="true">02</span>
                   <span class="scenario-card__result">−3 ч рутины в день</span>
@@ -262,6 +281,7 @@
             </li>
             <li>
               <article class="scenario-card surface">
+                <span class="scenario-card__icon scenario-card__icon--log" aria-hidden="true"></span>
                 <div class="scenario-card__head">
                   <span class="scenario-card__index" aria-hidden="true">03</span>
                   <span class="scenario-card__result">Полный контроль</span>
@@ -273,6 +293,22 @@
               </article>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <!-- Отзыв (Ask-AI / Ramp) -->
+      <section class="quote-band band band--surface" aria-label="Отзыв клиента">
+        <div class="container quote-band__inner">
+          <blockquote class="quote-band__quote">
+            <p>
+              «Ночные заявки из Telegram раньше висели до утра. С Datagent карточка в CRM и бриф
+              менеджеру — пока мы спим.»
+            </p>
+            <footer>
+              <cite>Руководитель отдела продаж</cite>
+              <span>агентство недвижимости, пилот</span>
+            </footer>
+          </blockquote>
         </div>
       </section>
 
@@ -326,11 +362,15 @@
             <p class="section__lead pricing__disclaimer">
               Цены — ориентир для кастдева. На демо подберём план под ваш объём.
             </p>
-            <div class="pricing-billing" role="group" aria-label="Период оплаты">
+            <div class="pricing-billing" data-pricing-billing role="group" aria-label="Период оплаты">
               <span class="pricing-billing__label">Оплата</span>
               <div class="pricing-billing__toggle">
-                <span class="pricing-billing__option is-active" aria-current="true">Месяц</span>
-                <span class="pricing-billing__option pricing-billing__option--muted">Год −15%</span>
+                <button type="button" class="pricing-billing__option is-active" data-billing="monthly" aria-pressed="true">
+                  Месяц
+                </button>
+                <button type="button" class="pricing-billing__option" data-billing="yearly" aria-pressed="false">
+                  Год <span class="pricing-billing__save">−15%</span>
+                </button>
               </div>
             </div>
           </header>
@@ -340,7 +380,10 @@
                 <h3 class="plan__name">Старт</h3>
                 <p class="plan__desc">Для небольшой команды и пилота</p>
               </header>
-              <p class="plan__price"><span class="plan__amount">9 990 ₽</span><span class="plan__period">/ мес</span></p>
+              <p class="plan__price">
+                <span class="plan__amount" data-price-monthly="9 990 ₽" data-price-yearly="8 492 ₽">9 990 ₽</span>
+                <span class="plan__period" data-period-label>/ мес</span>
+              </p>
               <ul class="plan__features">
                 <li>500 диалогов в месяц</li>
                 <li>CRM + Telegram</li>
@@ -356,7 +399,10 @@
                 <h3 class="plan__name">Бизнес</h3>
                 <p class="plan__desc">Для отдела продаж с потоком лидов</p>
               </header>
-              <p class="plan__price"><span class="plan__amount">24 990 ₽</span><span class="plan__period">/ мес</span></p>
+              <p class="plan__price">
+                <span class="plan__amount" data-price-monthly="24 990 ₽" data-price-yearly="21 242 ₽">24 990 ₽</span>
+                <span class="plan__period" data-period-label>/ мес</span>
+              </p>
               <ul class="plan__features">
                 <li>3 000 диалогов в месяц</li>
                 <li>Кастомные сценарии</li>
@@ -436,46 +482,57 @@
 
       <!-- [I] FINAL CTA -->
       <section class="cta section band" id="demo" aria-labelledby="cta-title">
-        <div class="container cta__inner">
-          <h2 id="cta-title">Готовы перестать терять лиды ночью?</h2>
-          <p class="cta__lead">
-            Покажем Datagent на ваших сценариях — за 30 минут, без обязательств.
-          </p>
-          <form class="cta-form" id="demo-form" data-demo-form action="#" method="post" novalidate>
-            <div class="cta-form__row">
-              <div class="field">
-                <label for="demo-name">Имя</label>
-                <input
-                  type="text"
-                  id="demo-name"
-                  name="name"
-                  required
-                  autocomplete="name"
-                  placeholder="Алексей"
-                  aria-errormessage="demo-name-error"
-                />
-                <div id="demo-name-error" class="field__error" role="alert">Укажите имя</div>
+        <div class="container cta__grid">
+          <div class="cta__copy">
+            <h2 id="cta-title">Готовы перестать терять лиды ночью?</h2>
+            <p class="cta__lead">
+              Покажем Datagent на ваших сценариях — за 30 минут, без обязательств.
+            </p>
+            <ul class="cta-benefits" aria-label="Что будет на демо">
+              <li>Подключение Telegram и CRM на примере</li>
+              <li>Сценарий ответа и квалификации лида</li>
+              <li>Оценка объёма и подбор тарифа</li>
+              <li>14 дней пилота после встречи</li>
+            </ul>
+          </div>
+          <div class="cta__panel surface">
+            <p class="cta__panel-title">Запросить демо</p>
+            <form class="cta-form" id="demo-form" data-demo-form action="#" method="post" novalidate>
+              <div class="cta-form__row">
+                <div class="field">
+                  <label for="demo-name">Имя</label>
+                  <input
+                    type="text"
+                    id="demo-name"
+                    name="name"
+                    required
+                    autocomplete="name"
+                    placeholder="Алексей"
+                    aria-errormessage="demo-name-error"
+                  />
+                  <div id="demo-name-error" class="field__error" role="alert">Укажите имя</div>
+                </div>
+                <div class="field">
+                  <label for="demo-contact">Телефон или Telegram</label>
+                  <input
+                    type="text"
+                    id="demo-contact"
+                    name="contact"
+                    required
+                    autocomplete="tel"
+                    inputmode="tel"
+                    placeholder="+7 … или @username"
+                    aria-errormessage="demo-contact-error"
+                  />
+                  <div id="demo-contact-error" class="field__error" role="alert">Укажите контакт</div>
+                </div>
               </div>
-              <div class="field">
-                <label for="demo-contact">Телефон или Telegram</label>
-                <input
-                  type="text"
-                  id="demo-contact"
-                  name="contact"
-                  required
-                  autocomplete="tel"
-                  inputmode="tel"
-                  placeholder="+7 … или @username"
-                  aria-errormessage="demo-contact-error"
-                />
-                <div id="demo-contact-error" class="field__error" role="alert">Укажите контакт</div>
-              </div>
-            </div>
-            <button type="submit" class="btn btn--primary btn--on-dark btn--block" data-cta="demo">
-              Запросить демо
-            </button>
-            <p class="cta-form__trust">Без спама. Ответим в течение 2 часов в рабочее время.</p>
-          </form>
+              <button type="submit" class="btn btn--primary btn--block" data-cta="demo">
+                Запросить демо
+              </button>
+              <p class="cta-form__trust">Без спама. Ответим в течение 2 часов в рабочее время.</p>
+            </form>
+          </div>
         </div>
       </section>
     </main>
