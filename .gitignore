@@ -5,6 +5,7 @@ Thumbs.db
 .vscode/
 *.swp
 .env
+.cursor/mcp.json
 
 node_modules/
 dist/
