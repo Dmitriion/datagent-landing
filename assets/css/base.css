@@ -31,11 +31,6 @@ body {
   line-height: 1.55;
   color: var(--color-text);
   background: var(--color-bg);
-  background-image: radial-gradient(
-    ellipse 120% 80% at 50% -20%,
-    color-mix(in oklch, var(--color-primary-soft) 35%, transparent),
-    transparent 50%
-  );
   accent-color: var(--color-primary);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -155,4 +150,42 @@ button {
 
 .section__header--center .section__lead {
   margin-inline: auto;
+}
+
+/* Unified section bands (startup landing rhythm) */
+.band {
+  position: relative;
+}
+
+.band--perf {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 32rem;
+}
+
+.band--alt {
+  background: var(--color-bg-alt);
+}
+
+.band--surface {
+  background: var(--color-surface);
+}
+
+/* Shared elevated surface — pain, solution, flow, plan */
+.surface {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-xs);
+}
+
+.surface:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, oklch(0.85 0.08 192), oklch(0.72 0.14 75));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

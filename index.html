@@ -16,6 +16,11 @@
       data-favicon
     />
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap"
+      as="style"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Datagent — AI для команд" />
     <meta
@@ -78,15 +83,23 @@
               <span class="hero__badge-item">GigaChat · YandexGPT</span>
               <span class="hero__badge-item">CRM и мессенджеры</span>
             </p>
-            <h1 id="hero-title">AI для вашей команды — без потери лидов ночью</h1>
+            <h1 id="hero-title">
+              AI для вашей команды —
+              <span class="text-gradient">без потери лидов</span> ночью
+            </h1>
             <p class="hero__subline">
               Datagent отвечает клиентам, квалифицирует заявки и ведёт CRM. Подключается к Telegram,
               Битрикс24 и другим инструментам — пока команда offline.
             </p>
             <div class="hero__actions">
-              <a class="btn btn--primary btn--on-dark" href="#demo" data-cta="demo">Запросить демо</a>
-              <a class="btn btn--ghost btn--on-dark" href="#how-it-works">Смотреть как работает</a>
+              <a class="btn btn--primary btn--on-dark btn--lg" href="#demo" data-cta="demo">Запросить демо</a>
+              <a class="btn btn--ghost btn--on-dark" href="#how-it-works">Как это работает</a>
             </div>
+            <ul class="hero__proof" aria-label="Ключевые показатели">
+              <li><strong>5 мин</strong><span>до запуска</span></li>
+              <li><strong>24/7</strong><span>ответы клиентам</span></li>
+              <li><strong>100%</strong><span>данные в РФ</span></li>
+            </ul>
           </div>
           <figure class="hero__visual" aria-label="Пример: диалог в Telegram и карточка в CRM">
             <div class="hero-mockup">
@@ -145,26 +158,26 @@
       </section>
 
       <!-- [C] TRUST BAR -->
-      <section class="trust-bar" aria-label="Преимущества">
+      <section class="trust-bar band band--surface" aria-label="Преимущества">
         <div class="container">
           <ul class="trust-bar__grid">
             <li class="trust-bar__item">
-              <span class="trust-bar__icon" aria-hidden="true">⚡</span>
+              <span class="trust-bar__icon trust-bar__icon--speed" aria-hidden="true"></span>
               <strong>5 мин</strong>
               <span>настройка</span>
             </li>
             <li class="trust-bar__item">
-              <span class="trust-bar__icon" aria-hidden="true">🔗</span>
+              <span class="trust-bar__icon trust-bar__icon--link" aria-hidden="true"></span>
               <strong>CRM + мессенджеры</strong>
               <span>Битрикс24, Telegram</span>
             </li>
             <li class="trust-bar__item">
-              <span class="trust-bar__icon" aria-hidden="true">🇷🇺</span>
+              <span class="trust-bar__icon trust-bar__icon--ru" aria-hidden="true"></span>
               <strong>GigaChat + YandexGPT</strong>
               <span>российские LLM</span>
             </li>
             <li class="trust-bar__item">
-              <span class="trust-bar__icon" aria-hidden="true">🔒</span>
+              <span class="trust-bar__icon trust-bar__icon--lock" aria-hidden="true"></span>
               <strong>Данные в РФ</strong>
               <span>сервер в России</span>
             </li>
@@ -173,14 +186,14 @@
       </section>
 
       <!-- [D] PROBLEM -->
-      <section class="section problem" id="problem" aria-labelledby="problem-title">
+      <section class="section band band--perf problem" id="problem" aria-labelledby="problem-title">
         <div class="container">
           <header class="section__header section__header--center">
             <h2 id="problem-title">Звучит знакомо?</h2>
           </header>
           <ul class="pain-grid">
             <li>
-              <article class="pain-card">
+              <article class="pain-card surface">
                 <h3>Лиды теряются</h3>
                 <p>
                   Клиент написал в Telegram в 23:00. Утром уже поздно — вы потеряли сделку.
@@ -188,7 +201,7 @@
               </article>
             </li>
             <li>
-              <article class="pain-card">
+              <article class="pain-card surface">
                 <h3>Работа по ночам</h3>
                 <p>
                   Менеджер офлайн — клиент ушёл к конкуренту. Вы узнаёте об этом только утром.
@@ -196,7 +209,7 @@
               </article>
             </li>
             <li>
-              <article class="pain-card">
+              <article class="pain-card surface">
                 <h3>Ручная работа</h3>
                 <p>
                   Каждый диалог из Telegram вручную переносится в CRM. До 3 часов в день — впустую.
@@ -208,7 +221,7 @@
       </section>
 
       <!-- [E] SOLUTION -->
-      <section class="section" id="solution" aria-labelledby="solution-title">
+      <section class="section band band--perf band--alt" id="solution" aria-labelledby="solution-title">
         <div class="container">
           <header class="section__header section__header--center">
             <p class="section__eyebrow">Решение</p>
@@ -216,7 +229,7 @@
           </header>
           <ul class="scenario-grid">
             <li>
-              <article class="scenario-card">
+              <article class="scenario-card surface">
                 <div class="scenario-card__head">
                   <span class="scenario-card__index" aria-hidden="true">01</span>
                   <span class="scenario-card__result">0 потерянных лидов</span>
@@ -229,7 +242,7 @@
               </article>
             </li>
             <li>
-              <article class="scenario-card">
+              <article class="scenario-card surface">
                 <div class="scenario-card__head">
                   <span class="scenario-card__index" aria-hidden="true">02</span>
                   <span class="scenario-card__result">−3 ч рутины в день</span>
@@ -242,7 +255,7 @@
               </article>
             </li>
             <li>
-              <article class="scenario-card">
+              <article class="scenario-card surface">
                 <div class="scenario-card__head">
                   <span class="scenario-card__index" aria-hidden="true">03</span>
                   <span class="scenario-card__result">Полный контроль</span>
@@ -258,13 +271,14 @@
       </section>
 
       <!-- [F] HOW IT WORKS -->
-      <section class="section section--muted" id="how-it-works" aria-labelledby="how-title">
+      <section class="section band band--perf band--surface" id="how-it-works" aria-labelledby="how-title">
         <div class="container">
           <header class="section__header section__header--center">
             <p class="section__eyebrow">Старт</p>
             <h2 id="how-title">Запуск за 5 минут</h2>
             <p class="section__lead">Без разработчика: подключили инструменты — задали правила — агент в работе.</p>
           </header>
+          <div class="flow-panel surface">
           <ol class="flow">
             <li class="flow__step">
               <div class="flow__marker" aria-hidden="true">1</div>
@@ -288,11 +302,12 @@
               </div>
             </li>
           </ol>
+          </div>
         </div>
       </section>
 
       <!-- [G] PRICING -->
-      <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <section class="section band band--perf" id="pricing" aria-labelledby="pricing-title">
         <div class="container">
           <header class="section__header section__header--center">
             <p class="section__eyebrow">Тарифы</p>
@@ -302,7 +317,7 @@
             </p>
           </header>
           <div class="pricing-grid" role="list">
-            <article class="plan" role="listitem">
+            <article class="plan surface" role="listitem">
               <header class="plan__header">
                 <h3 class="plan__name">Старт</h3>
                 <p class="plan__desc">Для небольшой команды и пилота</p>
@@ -317,7 +332,7 @@
                 <a class="btn btn--ghost btn--block" href="#demo" data-cta="demo">Попробовать</a>
               </footer>
             </article>
-            <article class="plan plan--featured" role="listitem">
+            <article class="plan plan--featured surface" role="listitem">
               <p class="plan__badge">Рекомендуем</p>
               <header class="plan__header">
                 <h3 class="plan__name">Бизнес</h3>
@@ -333,7 +348,7 @@
                 <a class="btn btn--primary btn--block" href="#demo" data-cta="demo">Запросить демо</a>
               </footer>
             </article>
-            <article class="plan" role="listitem">
+            <article class="plan surface" role="listitem">
               <header class="plan__header">
                 <h3 class="plan__name">Команда</h3>
                 <p class="plan__desc">Несколько воронок и без лимитов</p>
@@ -357,7 +372,7 @@
       </section>
 
       <!-- [H] FAQ -->
-      <section class="section section--muted" id="faq" aria-labelledby="faq-title">
+      <section class="section band band--perf band--alt" id="faq" aria-labelledby="faq-title">
         <div class="container">
           <header class="section__header section__header--center">
             <h2 id="faq-title">Частые вопросы</h2>
@@ -402,7 +417,7 @@
       </section>
 
       <!-- [I] FINAL CTA -->
-      <section class="cta section" id="demo" aria-labelledby="cta-title">
+      <section class="cta section band" id="demo" aria-labelledby="cta-title">
         <div class="container cta__inner">
           <h2 id="cta-title">Готовы перестать терять лиды ночью?</h2>
           <p class="cta__lead">

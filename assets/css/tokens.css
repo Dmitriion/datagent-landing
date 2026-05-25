@@ -1,105 +1,123 @@
 /**
- * Datagent landing — design tokens
- * Baseline 2024 · OKLCH + fluid type via clamp()
+ * Datagent — design tokens (SaaS landing, perf-first)
  */
 
 :root {
   color-scheme: light;
 
   /* Surfaces */
-  --color-bg: #f7f6f2;
-  --color-surface: #f9f8f5;
+  --color-bg: #f6f5f1;
+  --color-bg-alt: #eeede8;
+  --color-surface: #faf9f6;
   --color-surface-elevated: #ffffff;
-  --color-border: oklch(0.88 0.01 95);
+  --color-border: oklch(0.9 0.008 95);
+  --color-border-strong: oklch(0.82 0.02 95);
 
-  /* Primary — Hydra Teal */
+  /* Brand */
   --color-primary: oklch(0.42 0.08 192);
-  --color-primary-hover: oklch(0.34 0.08 192);
-  --color-primary-soft: oklch(0.92 0.04 192);
+  --color-primary-hover: oklch(0.36 0.09 192);
+  --color-primary-soft: oklch(0.94 0.035 192);
+  --color-primary-glow: oklch(0.55 0.12 192 / 0.35);
 
-  /* Accent */
   --color-accent: oklch(0.72 0.14 75);
 
-  /* Text */
-  --color-text: #28251d;
-  --color-text-muted: #7a7974;
-  --color-text-inverse: #f9f8f5;
+  /* Hero ink */
+  --color-hero-bg: oklch(0.17 0.03 250);
+  --color-hero-surface: oklch(0.22 0.03 250);
+  --color-hero-text: oklch(0.97 0.01 95);
+  --color-hero-muted: oklch(0.78 0.02 250);
 
-  /* Focus & validation */
+  /* Text */
+  --color-text: #1c1b18;
+  --color-text-muted: #6f6e69;
+  --color-text-inverse: #faf9f6;
+
   --color-focus: oklch(0.5 0.12 192);
   --color-error: oklch(0.55 0.2 25);
   --color-error-bg: oklch(0.95 0.04 25);
 
-  /* Typography families */
   --font-display: 'Cabinet Grotesk', system-ui, sans-serif;
   --font-body: 'Satoshi', system-ui, sans-serif;
 
-  /* Fluid type scale */
-  --text-display: clamp(2.5rem, 1rem + 4vw, 5rem);
-  --text-h2: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-  --text-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  --text-ui: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-  --text-small: clamp(0.8125rem, 0.78rem + 0.2vw, 0.9375rem);
+  --text-display: clamp(2.25rem, 1.1rem + 3.8vw, 4.25rem);
+  --text-h2: clamp(1.625rem, 1.25rem + 1.1vw, 2.5rem);
+  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-ui: clamp(0.875rem, 0.84rem + 0.2vw, 0.9375rem);
+  --text-small: clamp(0.8125rem, 0.8rem + 0.1vw, 0.875rem);
 
-  /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
   --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
-  --space-section: clamp(3.5rem, 2rem + 5vw, 6rem);
+  --space-2xl: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+  --space-3xl: clamp(3.5rem, 2.5rem + 3vw, 5rem);
+  --space-section: clamp(4rem, 2.5rem + 5vw, 6.5rem);
 
-  /* Layout */
-  --container: min(72rem, 100% - 2rem);
+  --container: min(71rem, 100% - 2.5rem);
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
-  --radius-lg: 1.25rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
   --radius-pill: 999px;
 
-  /* Motion */
+  --shadow-xs: 0 1px 2px oklch(0.2 0.02 95 / 0.06);
+  --shadow-sm: 0 8px 24px -12px oklch(0.2 0.02 95 / 0.12);
+  --shadow-md: 0 20px 40px -24px oklch(0.2 0.02 95 / 0.18);
+  --shadow-lg: 0 32px 64px -32px oklch(0.15 0.03 250 / 0.45);
+  --shadow-soft: var(--shadow-md);
+
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --duration: 200ms;
-  --shadow-soft: 0 24px 48px -28px oklch(0.25 0.02 95 / 0.35);
+  --duration: 180ms;
 }
 
 [data-theme='dark'] {
   color-scheme: dark;
 
-  --color-bg: oklch(0.18 0.02 95);
-  --color-surface: oklch(0.22 0.02 95);
-  --color-surface-elevated: oklch(0.26 0.02 95);
-  --color-border: oklch(0.32 0.02 95);
+  --color-bg: oklch(0.16 0.02 95);
+  --color-bg-alt: oklch(0.19 0.02 95);
+  --color-surface: oklch(0.2 0.02 95);
+  --color-surface-elevated: oklch(0.24 0.02 95);
+  --color-border: oklch(0.3 0.02 95);
+  --color-border-strong: oklch(0.38 0.02 95);
 
-  --color-primary: oklch(0.62 0.1 192);
+  --color-primary: oklch(0.64 0.1 192);
   --color-primary-hover: oklch(0.72 0.1 192);
   --color-primary-soft: oklch(0.28 0.04 192);
+  --color-primary-glow: oklch(0.55 0.12 192 / 0.25);
+
+  --color-hero-bg: oklch(0.12 0.02 250);
+  --color-hero-surface: oklch(0.18 0.02 250);
 
   --color-text: oklch(0.94 0.01 95);
-  --color-text-muted: oklch(0.72 0.02 95);
-  --color-text-inverse: oklch(0.18 0.02 95);
+  --color-text-muted: oklch(0.7 0.02 95);
+  --color-text-inverse: oklch(0.14 0.02 95);
 
-  --shadow-soft: 0 24px 48px -28px oklch(0.05 0 0 / 0.55);
+  --shadow-sm: 0 8px 24px -12px oklch(0.02 0 0 / 0.45);
+  --shadow-md: 0 20px 40px -24px oklch(0.02 0 0 / 0.55);
+  --shadow-lg: 0 32px 64px -32px oklch(0.02 0 0 / 0.65);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
 
-    --color-bg: oklch(0.18 0.02 95);
-    --color-surface: oklch(0.22 0.02 95);
-    --color-surface-elevated: oklch(0.26 0.02 95);
-    --color-border: oklch(0.32 0.02 95);
+    --color-bg: oklch(0.16 0.02 95);
+    --color-bg-alt: oklch(0.19 0.02 95);
+    --color-surface: oklch(0.2 0.02 95);
+    --color-surface-elevated: oklch(0.24 0.02 95);
+    --color-border: oklch(0.3 0.02 95);
+    --color-border-strong: oklch(0.38 0.02 95);
 
-    --color-primary: oklch(0.62 0.1 192);
+    --color-primary: oklch(0.64 0.1 192);
     --color-primary-hover: oklch(0.72 0.1 192);
     --color-primary-soft: oklch(0.28 0.04 192);
 
-    --color-text: oklch(0.94 0.01 95);
-    --color-text-muted: oklch(0.72 0.02 95);
-    --color-text-inverse: oklch(0.18 0.02 95);
+    --color-hero-bg: oklch(0.12 0.02 250);
+    --color-hero-surface: oklch(0.18 0.02 250);
 
-    --shadow-soft: 0 24px 48px -28px oklch(0.05 0 0 / 0.55);
+    --color-text: oklch(0.94 0.01 95);
+    --color-text-muted: oklch(0.7 0.02 95);
+    --color-text-inverse: oklch(0.14 0.02 95);
   }
 }
