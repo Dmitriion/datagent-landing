@@ -783,41 +783,109 @@
   color: var(--color-text-muted);
 }
 
-/* Problem */
-.problem {
-  background: transparent;
+/* Problem — UserGuiding illustrated cards + DemandScience «Challenge» */
+.problem .section__lead {
+  max-width: 34rem;
 }
 
 .pain-grid {
   display: grid;
   gap: var(--space-lg);
+  align-items: stretch;
 }
 
 @media (min-width: 48rem) {
   .pain-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
+.pain-grid > li {
+  display: flex;
+  min-height: 100%;
+}
+
 .pain-card {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
   padding: var(--space-xl);
-  border-inline-start: 3px solid var(--color-primary);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--duration) var(--ease-out),
+    box-shadow var(--duration) var(--ease-out),
+    border-color var(--duration) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .pain-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: color-mix(in oklch, var(--color-primary) 28%, var(--color-border));
+  }
+}
+
+.pain-card--emphasis {
+  border-color: color-mix(in oklch, var(--color-primary) 35%, var(--color-border));
+  box-shadow: var(--shadow-md);
+}
+
+.pain-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.pain-card__icon-wrap {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.pain-card__icon-wrap--loss {
+  background: oklch(0.94 0.04 25);
+}
+
+.pain-card__icon-wrap--night {
+  background: oklch(0.92 0.04 250);
+}
+
+.pain-card__icon-wrap--manual {
+  background: oklch(0.94 0.03 95);
 }
 
 .pain-card__icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-bottom: var(--space-md);
-  border-radius: var(--radius-md);
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
   background: var(--color-primary);
-  mask-size: 1.25rem;
+  mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
 }
 
+.pain-card__icon-wrap--loss .pain-card__icon {
+  background: oklch(0.5 0.16 25);
+}
+
+.pain-card__icon-wrap--night .pain-card__icon {
+  background: oklch(0.45 0.08 250);
+}
+
+.pain-card__icon-wrap--manual .pain-card__icon {
+  background: oklch(0.48 0.06 95);
+}
+
 .pain-card__icon--loss {
-  background: oklch(0.55 0.14 25);
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
 }
 
@@ -829,17 +897,132 @@
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='16' y1='13' x2='8' y2='13'/%3E%3Cline x1='16' y1='17' x2='8' y2='17'/%3E%3C/svg%3E");
 }
 
+.pain-card__metric {
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.pain-card--emphasis .pain-card__metric {
+  background: var(--color-primary-soft);
+  border-color: color-mix(in oklch, var(--color-primary) 25%, transparent);
+  color: var(--color-primary);
+}
+
 .pain-card h3 {
   font-family: var(--font-display);
   font-size: clamp(1.05rem, 1rem + 0.25vw, 1.2rem);
   font-weight: 700;
-  margin-bottom: var(--space-sm);
+  margin: 0 0 var(--space-sm);
 }
 
 .pain-card p {
+  flex: 1;
+  margin: 0;
   color: var(--color-text-muted);
   line-height: 1.6;
   font-size: var(--text-small);
+}
+
+/* Mini UI scenes (product-style footers on cards) */
+.pain-card__viz {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: var(--space-lg);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-alt);
+  border: 1px dashed var(--color-border);
+  font-size: 0.6875rem;
+}
+
+.pain-card__viz-label {
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.pain-card__viz-bubble {
+  flex: 1;
+  min-width: 8rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.65rem 0.65rem 0.65rem 0.15rem;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+}
+
+.pain-card__viz-bubble span {
+  display: block;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.pain-card__viz-bubble time {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--color-text-muted);
+}
+
+.pain-card__viz-status {
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: oklch(0.94 0.05 25);
+  color: oklch(0.45 0.14 25);
+  font-weight: 700;
+  text-align: center;
+}
+
+.pain-card__viz--night {
+  justify-content: space-between;
+}
+
+.pain-card__viz-clock {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.pain-card__viz-arrow {
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.pain-card__viz-competitor {
+  padding: 0.35rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: oklch(0.55 0.14 25 / 0.12);
+  color: oklch(0.45 0.14 25);
+  font-weight: 700;
+}
+
+.pain-card__viz-pane {
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.pain-card__viz-pane--crm {
+  color: var(--color-primary);
+  border-color: color-mix(in oklch, var(--color-primary) 35%, var(--color-border));
+  background: var(--color-primary-soft);
+}
+
+.pain-card__viz--manual {
+  justify-content: center;
 }
 
 /* Solution — equal-height cards */

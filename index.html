@@ -205,38 +205,75 @@
         </div>
       </section>
 
-      <!-- [D] PROBLEM -->
-      <section class="section band band--perf problem" id="problem" aria-labelledby="problem-title">
+      <!-- [D] PROBLEM — UserGuiding / DemandScience «The Challenge» -->
+      <section class="section band band--perf band--alt problem" id="problem" aria-labelledby="problem-title">
         <div class="container">
           <header class="section__header section__header--center">
+            <p class="section__eyebrow">Проблема</p>
             <h2 id="problem-title">Звучит знакомо?</h2>
+            <p class="section__lead">
+              Пока команда offline, заявки остывают, а CRM обновляется вручную — каждый день.
+            </p>
           </header>
           <ul class="pain-grid">
             <li>
-              <article class="pain-card surface">
-                <span class="pain-card__icon pain-card__icon--loss" aria-hidden="true"></span>
+              <article class="pain-card">
+                <div class="pain-card__head">
+                  <span class="pain-card__icon-wrap pain-card__icon-wrap--loss" aria-hidden="true">
+                    <span class="pain-card__icon pain-card__icon--loss"></span>
+                  </span>
+                  <span class="pain-card__metric">23:00</span>
+                </div>
                 <h3>Лиды теряются</h3>
                 <p>
                   Клиент написал в Telegram в 23:00. Утром уже поздно — вы потеряли сделку.
                 </p>
+                <div class="pain-card__viz pain-card__viz--chat" aria-hidden="true">
+                  <span class="pain-card__viz-label">Telegram</span>
+                  <div class="pain-card__viz-bubble">
+                    <span>Нужна консультация</span>
+                    <time>23:00</time>
+                  </div>
+                  <span class="pain-card__viz-status">без ответа</span>
+                </div>
               </article>
             </li>
             <li>
-              <article class="pain-card surface">
-                <span class="pain-card__icon pain-card__icon--night" aria-hidden="true"></span>
+              <article class="pain-card pain-card--emphasis">
+                <div class="pain-card__head">
+                  <span class="pain-card__icon-wrap pain-card__icon-wrap--night" aria-hidden="true">
+                    <span class="pain-card__icon pain-card__icon--night"></span>
+                  </span>
+                  <span class="pain-card__metric">offline</span>
+                </div>
                 <h3>Работа по ночам</h3>
                 <p>
                   Менеджер офлайн — клиент ушёл к конкуренту. Вы узнаёте об этом только утром.
                 </p>
+                <div class="pain-card__viz pain-card__viz--night" aria-hidden="true">
+                  <span class="pain-card__viz-clock">23:14</span>
+                  <span class="pain-card__viz-arrow" aria-hidden="true">→</span>
+                  <span class="pain-card__viz-competitor">конкурент ответил</span>
+                </div>
               </article>
             </li>
             <li>
-              <article class="pain-card surface">
-                <span class="pain-card__icon pain-card__icon--manual" aria-hidden="true"></span>
+              <article class="pain-card">
+                <div class="pain-card__head">
+                  <span class="pain-card__icon-wrap pain-card__icon-wrap--manual" aria-hidden="true">
+                    <span class="pain-card__icon pain-card__icon--manual"></span>
+                  </span>
+                  <span class="pain-card__metric">3 ч/день</span>
+                </div>
                 <h3>Ручная работа</h3>
                 <p>
                   Каждый диалог из Telegram вручную переносится в CRM. До 3 часов в день — впустую.
                 </p>
+                <div class="pain-card__viz pain-card__viz--manual" aria-hidden="true">
+                  <span class="pain-card__viz-pane">Чат</span>
+                  <span class="pain-card__viz-arrow" aria-hidden="true">⇄</span>
+                  <span class="pain-card__viz-pane pain-card__viz-pane--crm">CRM</span>
+                </div>
               </article>
             </li>
           </ul>
