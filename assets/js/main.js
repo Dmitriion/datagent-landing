@@ -5,19 +5,42 @@
 
 const STORAGE_THEME = 'datagent-theme'
 
+const BRAND_ASSETS = {
+  light: {
+    favicon: '/assets/img/brand/favicon-light.svg',
+    logo: '/assets/img/brand/logo-light.svg',
+  },
+  dark: {
+    favicon: '/assets/img/brand/favicon-dark.svg',
+    logo: '/assets/img/brand/logo-dark.svg',
+  },
+}
+
 function getPreferredTheme() {
   const stored = localStorage.getItem(STORAGE_THEME)
   if (stored === 'light' || stored === 'dark') return stored
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
+const THEME_ICON_SUN = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>`
+const THEME_ICON_MOON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`
+
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme)
+  const isDark = theme === 'dark'
+  const assets = isDark ? BRAND_ASSETS.dark : BRAND_ASSETS.light
+
+  const favicon = document.querySelector('link[data-favicon]')
+  if (favicon) favicon.href = assets.favicon
+
+  const logo = document.querySelector('[data-brand-logo]')
+  if (logo) logo.src = assets.logo
+
   const toggle = document.querySelector('[data-theme-toggle]')
   if (toggle) {
-    const isDark = theme === 'dark'
     toggle.setAttribute('aria-pressed', String(isDark))
     toggle.setAttribute('aria-label', isDark ? 'Включить светлую тему' : 'Включить тёмную тему')
+    toggle.innerHTML = isDark ? THEME_ICON_SUN : THEME_ICON_MOON
   }
 }
 
@@ -98,8 +121,21 @@ function trackCtaClicks() {
   })
 }
 
+/** Sticky header shadow after scroll (MWG: shrinking-header pattern, lightweight) */
+function initHeaderScroll() {
+  const header = document.querySelector('[data-site-header]')
+  if (!header) return
+
+  const onScroll = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 80)
+  }
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+}
+
 function init() {
   initTheme()
+  initHeaderScroll()
   initDemoForm()
   trackCtaClicks()
 }

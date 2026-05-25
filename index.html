@@ -1,68 +1,60 @@
 <!doctype html>
-<html lang="ru" data-theme="light">
+<html lang="ru" data-theme="light" data-hero-variant="a">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Datagent — AI-оркестратор для автоматизации бизнес-процессов. Запросите демо и проверьте сценарии на ваших данных."
+      content="Datagent — AI-ассистент для команд на Битрикс24. Отвечает в Telegram, квалифицирует лиды и создаёт сделки в CRM. Данные в РФ."
     />
-    <title>Datagent — AI-оркестратор бизнес-процессов</title>
+    <title>Datagent — AI-ассистент для Битрикс24 и Telegram</title>
 
-    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <link
-      rel="preload"
-      href="/assets/img/hero-product.svg"
-      as="image"
+      rel="icon"
+      href="/assets/img/brand/favicon-light.svg"
       type="image/svg+xml"
-      fetchpriority="high"
+      data-favicon
     />
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Datagent — AI-оркестратор бизнес-процессов" />
+    <meta property="og:title" content="Datagent — AI-ассистент для Битрикс24" />
     <meta
       property="og:description"
-      content="Автоматизируйте бизнес-процессы агентами. Запросите демо Datagent."
+      content="Лиды не теряются ночью: Telegram + Битрикс24 + российские LLM."
     />
     <meta property="og:locale" content="ru_RU" />
+
     <link
       href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="/assets/css/tokens.css" />
     <link rel="stylesheet" href="/assets/css/base.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
-
-    <!-- Яндекс.Метрика: замените 00000000 на ID счётчика -->
-    <!--
-    <script>
-      window.DATAGENT_METRIKA_ID = 00000000;
-      (function (m, e, t, r, i, k, a) {
-        m[i] =
-          m[i] ||
-          function () {
-            (m[i].a = m[i].a || []).push(arguments);
-          };
-        m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) {
-          if (document.scripts[j].src === r) return;
-        }
-        (k = e.createElement(t)), (a = e.getElementsByTagName(t)[0]), (k.async = 1), (k.src = r), a.parentNode.insertBefore(k, a);
-      })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
-      ym(window.DATAGENT_METRIKA_ID, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
-    </script>
-    -->
   </head>
   <body>
     <a class="sr-only" href="#main">Перейти к содержимому</a>
 
-    <header class="site-header">
+    <header class="site-header" data-site-header>
       <div class="container site-header__inner">
         <a class="brand" href="/" aria-label="Datagent — на главную">
-          <span class="brand__mark" aria-hidden="true">D</span>
-          <span>Datagent</span>
+          <img
+            class="brand__logo"
+            src="/assets/img/brand/logo-light.svg"
+            alt="Datagent"
+            width="128"
+            height="32"
+            decoding="async"
+            data-brand-logo
+          />
         </a>
+
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="#how-it-works">Как работает</a>
+          <a href="#pricing">Тарифы</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
         <div class="site-header__actions">
           <button
             type="button"
@@ -76,255 +68,346 @@
               <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
             </svg>
           </button>
-          <a class="btn btn--primary" href="#demo" data-cta="demo">Запросить демо</a>
+          <a class="btn btn--primary site-header__cta" href="#demo" data-cta="demo">Запросить демо</a>
         </div>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero section" aria-labelledby="hero-title">
+      <!-- [B] HERO -->
+      <section class="hero hero--dark" aria-labelledby="hero-title">
         <div class="container hero__grid">
-          <div>
-            <p class="hero__badge">AI-оркестратор · без привязки к monorepo продукта</p>
-            <h1 id="hero-title">Автоматизируйте бизнес-процессы агентами, а не ручными скриптами</h1>
-            <p class="section__lead">
-              Datagent связывает ваши системы, запускает сценарии и держит процесс под контролем — от заявки до
-              отчёта. Гипотеза для кастдева: экономия 10+ часов в неделю на рутине команды.
+          <div class="hero__copy">
+            <p class="hero__badge">
+              <span class="hero__badge-item">Сделано в России</span>
+              <span class="hero__badge-item">GigaChat</span>
+              <span class="hero__badge-item">YandexGPT</span>
+              <span class="hero__badge-item">Битрикс24</span>
+            </p>
+            <h1 id="hero-title">Ваш AI-ассистент для команд на Битрикс24</h1>
+            <p class="hero__subline">
+              Datagent подключается к вашему CRM и Telegram. Отвечает клиентам, квалифицирует лиды
+              и ставит задачи — пока вы спите.
             </p>
             <div class="hero__actions">
-              <a class="btn btn--primary" href="#demo" data-cta="demo">Запросить демо</a>
-              <a class="btn btn--ghost" href="#solution">Как это работает</a>
+              <a class="btn btn--primary btn--on-dark" href="#demo" data-cta="demo">Запросить демо</a>
+              <a class="btn btn--ghost btn--on-dark" href="#how-it-works">Смотреть как работает</a>
             </div>
           </div>
-          <figure class="hero__visual">
-            <img
-              src="/assets/img/hero-product.svg"
-              alt="Схема интерфейса Datagent: оркестратор и активные агенты"
-              width="800"
-              height="500"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
+          <figure class="hero__visual" aria-label="Пример: диалог в Telegram и сделка в Битрикс24">
+            <div class="hero-mockup">
+              <div class="hero-mockup__panel hero-mockup__panel--chat">
+                <p class="hero-mockup__meta">Telegram · 23:14</p>
+                <div class="hero-mockup__bubble hero-mockup__bubble--in">Здравствуйте, интересует квартира</div>
+                <div class="hero-mockup__bubble hero-mockup__bubble--bot">
+                  <span class="hero-mockup__bot-label">Datagent</span>
+                  Уточню бюджет и срок, передам менеджеру с брифом
+                </div>
+                <div class="hero-mockup__bubble hero-mockup__bubble--in">До 12 млн, в течение месяца</div>
+              </div>
+              <div class="hero-mockup__arrow" aria-hidden="true">
+                <span></span>
+              </div>
+              <div class="hero-mockup__panel hero-mockup__panel--crm">
+                <p class="hero-mockup__meta hero-mockup__meta--crm">Битрикс24 · Новая сделка</p>
+                <div class="hero-mockup__deal">
+                  <strong>Лид: квартира · Telegram</strong>
+                  <span>Статус: Квалификация · Менеджер: Алексей</span>
+                </div>
+                <div class="hero-mockup__chip">Бюджет до 12 млн</div>
+                <div class="hero-mockup__skeleton" aria-hidden="true"></div>
+                <div class="hero-mockup__skeleton hero-mockup__skeleton--short" aria-hidden="true"></div>
+                <span class="hero-mockup__task">Задача создана</span>
+              </div>
+            </div>
           </figure>
         </div>
       </section>
 
-      <section class="problem section" id="problem" aria-labelledby="problem-title">
+      <!-- [C] TRUST BAR -->
+      <section class="trust-bar" aria-label="Преимущества">
+        <div class="container">
+          <ul class="trust-bar__grid">
+            <li class="trust-bar__item">
+              <span class="trust-bar__icon" aria-hidden="true">⚡</span>
+              <strong>5 мин</strong>
+              <span>настройка</span>
+            </li>
+            <li class="trust-bar__item">
+              <span class="trust-bar__icon" aria-hidden="true">🔗</span>
+              <strong>Битрикс24 + Telegram</strong>
+              <span>готовые интеграции</span>
+            </li>
+            <li class="trust-bar__item">
+              <span class="trust-bar__icon" aria-hidden="true">🇷🇺</span>
+              <strong>GigaChat + YandexGPT</strong>
+              <span>российские LLM</span>
+            </li>
+            <li class="trust-bar__item">
+              <span class="trust-bar__icon" aria-hidden="true">🔒</span>
+              <strong>Данные в РФ</strong>
+              <span>сервер в России</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- [D] PROBLEM -->
+      <section class="section problem" id="problem" aria-labelledby="problem-title">
         <div class="container">
           <header class="section__header section__header--center">
-            <p class="section__eyebrow">Проблема</p>
-            <h2 id="problem-title">Что говорят команды до пилота</h2>
-            <p class="section__lead">
-              Формулировки из кастдева — обновляйте после каждых 5 интервью. Не полируйте копирайт до разговоров с
-              рынком.
-            </p>
+            <h2 id="problem-title">Звучит знакомо?</h2>
           </header>
-          <ul class="quote-list">
+          <ul class="pain-grid">
             <li>
-              <article class="quote-card">
-                <blockquote>«Интеграции разъезжаются — каждый отдел тащит свой Excel и свой бот»</blockquote>
-                <cite>— Операционный директор, B2B SaaS</cite>
+              <article class="pain-card">
+                <h3>Лиды теряются</h3>
+                <p>
+                  Клиент написал в Telegram в 23:00. Утром уже поздно — вы потеряли сделку.
+                </p>
               </article>
             </li>
             <li>
-              <article class="quote-card">
-                <blockquote>«Автоматизацию обещали год назад, а в проде всё ещё ручные чек-листы»</blockquote>
-                <cite>— Руководитель процессов, ритейл</cite>
+              <article class="pain-card">
+                <h3>Работа по ночам</h3>
+                <p>
+                  Менеджер офлайн — клиент ушёл к конкуренту. Вы узнаёте об этом только утром.
+                </p>
               </article>
             </li>
             <li>
-              <article class="quote-card">
-                <blockquote>«Нельзя отдать данные в чёрный ящик — нужен аудит каждого шага»</blockquote>
-                <cite>— CISO, финтех</cite>
+              <article class="pain-card">
+                <h3>Ручная работа</h3>
+                <p>
+                  Каждый диалог из Telegram вручную переносится в CRM. До 3 часов в день — впустую.
+                </p>
               </article>
             </li>
           </ul>
         </div>
       </section>
 
+      <!-- [E] SOLUTION -->
       <section class="section" id="solution" aria-labelledby="solution-title">
         <div class="container">
           <header class="section__header section__header--center">
             <p class="section__eyebrow">Решение</p>
-            <h2 id="solution-title">Три сценария, не десять фич</h2>
-            <p class="section__lead">Datagent оркестрирует агентов и интеграции вокруг ваших процессов.</p>
+            <h2 id="solution-title">Datagent работает вместо вас — 24/7</h2>
           </header>
           <ul class="scenario-grid">
             <li>
               <article class="scenario-card">
-                <span class="scenario-card__icon" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M12 3v18M3 12h18"/></svg>
-                </span>
-                <h3>Онбординг клиента</h3>
-                <p>Соберите данные из CRM, проверьте договор, создайте задачи в таск-трекере — один сценарий.</p>
+                <p class="scenario-card__result">0 потерянных лидов из мессенджеров</p>
+                <h3>Отвечает в Telegram автоматически</h3>
+                <p>
+                  Клиент пишет в любое время. Datagent отвечает, задаёт нужные вопросы и передаёт
+                  горячий лид менеджеру с готовым брифом.
+                </p>
               </article>
             </li>
             <li>
               <article class="scenario-card">
-                <span class="scenario-card__icon" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 5 5-9"/></svg>
-                </span>
-                <h3>Операционная отчётность</h3>
-                <p>Агенты подтягивают метрики, валидируют аномалии и отправляют сводку в Slack или email.</p>
+                <p class="scenario-card__result">−3 часа ручной работы в день</p>
+                <h3>Создаёт сделки в Битрикс24 сам</h3>
+                <p>
+                  Данные из диалога → в сделку → на нужного менеджера. Задачи, напоминания,
+                  статусы — автоматически.
+                </p>
               </article>
             </li>
             <li>
               <article class="scenario-card">
-                <span class="scenario-card__icon" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </span>
-                <h3>Комплаенс и аудит</h3>
-                <p>Каждый шаг сценария логируется: кто запустил, какие данные затронуты, какой результат.</p>
+                <p class="scenario-card__result">Контроль и автоматизация</p>
+                <h3>Вы видите всё, что происходит</h3>
+                <p>
+                  Каждое действие агента — в истории. Для чувствительных шагов — подтверждение.
+                  Никаких сюрпризов без вашего ведома.
+                </p>
               </article>
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="proof section" id="proof" aria-labelledby="proof-title">
+      <!-- [F] HOW IT WORKS -->
+      <section class="section section--muted" id="how-it-works" aria-labelledby="how-title">
         <div class="container">
           <header class="section__header section__header--center">
-            <p class="section__eyebrow">Социальное доказательство</p>
-            <h2 id="proof-title">Кейс появится после первого пилота</h2>
+            <h2 id="how-title">Запуск за 5 минут</h2>
           </header>
-          <div class="proof__card">
-            <blockquote>«Заглушка: сюда — цитата пилотного клиента и измеримый результат»</blockquote>
-            <p>Обновите блок, когда будет разрешение на публикацию имени и цифр.</p>
-          </div>
+          <ol class="steps">
+            <li class="steps__item">
+              <span class="steps__num" aria-hidden="true">1</span>
+              <h3>Подключаете Битрикс24</h3>
+              <p>Одна ссылка. Авторизуетесь. Готово.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__num" aria-hidden="true">2</span>
+              <h3>Настраиваете сценарии</h3>
+              <p>Кто отвечает, когда, на какие вопросы — без программиста.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__num" aria-hidden="true">3</span>
+              <h3>Всё работает само</h3>
+              <p>Агент отвечает, создаёт сделки и уведомляет вас.</p>
+            </li>
+          </ol>
         </div>
       </section>
 
+      <!-- [G] PRICING -->
       <section class="section" id="pricing" aria-labelledby="pricing-title">
         <div class="container">
           <header class="section__header section__header--center">
-            <p class="section__eyebrow">Тарифы</p>
-            <h2 id="pricing-title">Пилот и коммерческое предложение</h2>
-          </header>
-          <div class="pricing-card">
-            <p class="pricing-card__price">По запросу</p>
-            <p class="section__lead" style="margin-top: 1rem">
-              Стоимость зависит от числа сценариев, интеграций и требований к on-prem / облаку.
+            <h2 id="pricing-title">Простые тарифы. Без скрытых платежей.</h2>
+            <p class="section__lead pricing__disclaimer">
+              Цены — гипотеза для кастдева. Уточняются на демо.
             </p>
-            <ul>
-              <li>Пилот на одном процессе за 2–4 недели</li>
-              <li>Настройка оркестратора и 1–3 агентов</li>
-              <li>Поддержка на период валидации гипотезы</li>
-            </ul>
-            <a class="btn btn--primary" href="#demo" style="margin-top: 1.5rem" data-cta="demo">
-              Запросить коммерческое предложение
-            </a>
+          </header>
+          <div class="pricing-grid" role="list">
+            <article class="pricing-tier" role="listitem">
+              <h3 class="pricing-tier__name">Старт</h3>
+              <p class="pricing-tier__price">9 990 ₽<span>/мес</span></p>
+              <ul class="pricing-tier__features">
+                <li>500 диалогов / мес</li>
+                <li>Битрикс24 + Telegram</li>
+                <li>GigaChat / YandexGPT</li>
+              </ul>
+              <a class="btn btn--ghost btn--block" href="#demo" data-cta="demo">Попробовать</a>
+            </article>
+            <article class="pricing-tier pricing-tier--featured" role="listitem">
+              <p class="pricing-tier__badge">Популярный</p>
+              <h3 class="pricing-tier__name">Бизнес</h3>
+              <p class="pricing-tier__price">24 990 ₽<span>/мес</span></p>
+              <ul class="pricing-tier__features">
+                <li>3 000 диалогов / мес</li>
+                <li>Кастомные сценарии</li>
+                <li>Приоритетная настройка</li>
+              </ul>
+              <a class="btn btn--primary btn--block" href="#demo" data-cta="demo">Запросить демо</a>
+            </article>
+            <article class="pricing-tier" role="listitem">
+              <h3 class="pricing-tier__name">Команда</h3>
+              <p class="pricing-tier__price">Индивидуально</p>
+              <ul class="pricing-tier__features">
+                <li>Без лимита диалогов</li>
+                <li>Несколько воронок</li>
+                <li>Приоритетная поддержка</li>
+              </ul>
+              <a class="btn btn--ghost btn--block" href="#demo" data-cta="demo">Обсудить</a>
+            </article>
           </div>
+          <p class="pricing__footer">
+            Не уверены, какой тариф подходит?
+            <a href="#demo">Проведём демо и подберём вариант</a>.
+          </p>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="faq-title">
+      <!-- [H] FAQ -->
+      <section class="section section--muted" id="faq" aria-labelledby="faq-title">
         <div class="container">
           <header class="section__header section__header--center">
-            <p class="section__eyebrow">FAQ</p>
             <h2 id="faq-title">Частые вопросы</h2>
           </header>
           <div class="faq">
             <details>
-              <summary>Чем Datagent отличается от «просто ChatGPT»?</summary>
+              <summary>Мои данные в безопасности?</summary>
               <div class="faq__body">
-                Оркестратор запускает цепочки шагов в ваших системах с политиками доступа и аудитом, а не разовые
-                ответы в чате.
+                Datagent работает на серверах в России. Данные CRM и переписки не передаются за рубеж.
+                Используем GigaChat и YandexGPT с обработкой в РФ.
               </div>
             </details>
             <details>
-              <summary>Нужно ли менять текущий стек?</summary>
+              <summary>Нужен ли программист для настройки?</summary>
               <div class="faq__body">
-                Нет. Подключаем CRM, ERP, таск-трекеры и базы через API. Продуктовый monorepo не затрагивается.
+                Нет. Настройка занимает 5–15 минут в веб-интерфейсе. При подключении тарифа поможем
+                бесплатно настроить сценарии.
               </div>
             </details>
             <details>
-              <summary>Где хранятся данные?</summary>
+              <summary>Работает ли с нашей версией Битрикс24?</summary>
               <div class="faq__body">
-                Облако или выделенный контур — по требованиям безопасности. Детали — в коммерческом предложении.
+                Совместим с Битрикс24 Облако и Коробка, начиная с тарифа «CRM». Telegram Bot API —
+                стандартный.
               </div>
             </details>
             <details>
-              <summary>Сколько длится пилот?</summary>
-              <div class="faq__body">Обычно 2–4 недели на одном процессе с измеримой метрикой успеха.</div>
+              <summary>Что если агент ответит неправильно?</summary>
+              <div class="faq__body">
+                Вы задаёте сценарии и границы. Для нестандартных запросов — перевод на менеджера.
+                Все диалоги сохраняются и доступны для просмотра.
+              </div>
             </details>
             <details>
-              <summary>Кто владеет сценариями после пилота?</summary>
+              <summary>Можно ли протестировать перед оплатой?</summary>
               <div class="faq__body">
-                Ваша команда. Datagent передаёт документацию и обучение; дальше — подписка или расширение scope.
+                Да. Запросите демо — покажем на вашем CRM. После демо — 14 дней бесплатного пилота.
               </div>
             </details>
           </div>
         </div>
       </section>
 
+      <!-- [I] FINAL CTA -->
       <section class="cta section" id="demo" aria-labelledby="cta-title">
-        <div class="container">
-          <p class="section__eyebrow">Демо</p>
-          <h2 id="cta-title">Проверьте гипотезу на своём процессе</h2>
-          <p class="section__lead">
-            Оставьте контакт — вернёмся в течение 1 рабочего дня. Цель: ≥ 10 заявок за первые 30 дней.
+        <div class="container cta__inner">
+          <h2 id="cta-title">Готовы перестать терять лиды ночью?</h2>
+          <p class="cta__lead">
+            Покажем, как Datagent работает с вашим Битрикс24 — за 30 минут.
           </p>
           <form class="cta-form" id="demo-form" data-demo-form action="#" method="post" novalidate>
-            <div class="field">
-              <label for="demo-name">Имя</label>
-              <input
-                type="text"
-                id="demo-name"
-                name="name"
-                required
-                autocomplete="name"
-                placeholder="Как к вам обращаться"
-                aria-errormessage="demo-name-error"
-              />
-              <div id="demo-name-error" class="field__error" role="alert">Укажите имя</div>
-            </div>
-            <div class="field">
-              <label for="demo-contact">Email или телефон</label>
-              <input
-                type="text"
-                id="demo-contact"
-                name="contact"
-                required
-                autocomplete="email"
-                inputmode="email"
-                placeholder="you@company.ru"
-                aria-errormessage="demo-contact-error"
-              />
-              <div id="demo-contact-error" class="field__error" role="alert">
-                Укажите email или телефон
+            <div class="cta-form__row">
+              <div class="field">
+                <label for="demo-name">Имя</label>
+                <input
+                  type="text"
+                  id="demo-name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  placeholder="Алексей"
+                  aria-errormessage="demo-name-error"
+                />
+                <div id="demo-name-error" class="field__error" role="alert">Укажите имя</div>
+              </div>
+              <div class="field">
+                <label for="demo-contact">Телефон или Telegram</label>
+                <input
+                  type="text"
+                  id="demo-contact"
+                  name="contact"
+                  required
+                  autocomplete="tel"
+                  inputmode="tel"
+                  placeholder="+7 … или @username"
+                  aria-errormessage="demo-contact-error"
+                />
+                <div id="demo-contact-error" class="field__error" role="alert">Укажите контакт</div>
               </div>
             </div>
-            <button type="submit" class="btn btn--primary" data-cta="demo">Запросить демо</button>
+            <button type="submit" class="btn btn--primary btn--on-dark btn--block" data-cta="demo">
+              Запросить демо
+            </button>
+            <p class="cta-form__trust">Без спама. Ответим в течение 2 часов в рабочее время.</p>
           </form>
         </div>
       </section>
     </main>
 
+    <!-- [J] FOOTER -->
     <footer class="site-footer">
-      <div class="container">
-        <div class="site-footer__grid">
-          <div>
-            <p class="brand" style="margin-bottom: 0.5rem">
-              <span class="brand__mark" aria-hidden="true">D</span>
-              Datagent
-            </p>
-            <p style="color: var(--color-text-muted); font-size: var(--text-small)">
-              AI-оркестратор для автоматизации бизнес-процессов
-            </p>
-          </div>
-          <div>
-            <p style="font-weight: 600; margin-bottom: 0.75rem">Контакты</p>
-            <p><a href="mailto:hello@datagent.ru">hello@datagent.ru</a></p>
-          </div>
-          <div>
-            <p style="font-weight: 600; margin-bottom: 0.75rem">Репозитории</p>
-            <p><a href="https://github.com/Dmitriion/datagent">Продукт (datagent)</a></p>
-            <p><a href="https://github.com/Dmitriion/datagent-landing">Лендинг</a></p>
-          </div>
-        </div>
+      <div class="container site-footer__inner">
+        <p class="site-footer__brand">Datagent © 2026</p>
+        <p>
+          <a href="https://t.me/datagent_support">@datagent_support</a>
+          ·
+          <a href="mailto:hello@datagent.ru">hello@datagent.ru</a>
+        </p>
         <p class="site-footer__legal">
-          © 2026 Datagent. Код лендинга — MIT. Тексты и брендинг — All Rights Reserved. · Dmitrii Ionov
+          <a href="#">Политика конфиденциальности</a>
+          ·
+          <a href="#">Условия использования</a>
         </p>
       </div>
     </footer>
