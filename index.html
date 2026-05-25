@@ -10,13 +10,6 @@
     <title>Datagent — AI-ассистент для Битрикс24 и Telegram</title>
 
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
-    <link
-      rel="preload"
-      href="/assets/img/hero-bitrix-flow.svg"
-      as="image"
-      type="image/svg+xml"
-      fetchpriority="high"
-    />
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Datagent — AI-ассистент для Битрикс24" />
@@ -74,7 +67,10 @@
         <div class="container hero__grid">
           <div class="hero__copy">
             <p class="hero__badge">
-              Сделано в России · GigaChat · YandexGPT · Битрикс24
+              <span class="hero__badge-item">Сделано в России</span>
+              <span class="hero__badge-item">GigaChat</span>
+              <span class="hero__badge-item">YandexGPT</span>
+              <span class="hero__badge-item">Битрикс24</span>
             </p>
             <h1 id="hero-title">Ваш AI-ассистент для команд на Битрикс24</h1>
             <p class="hero__subline">
@@ -86,39 +82,61 @@
               <a class="btn btn--ghost btn--on-dark" href="#how-it-works">Смотреть как работает</a>
             </div>
           </div>
-          <figure class="hero__visual">
-            <img
-              src="/assets/img/hero-bitrix-flow.svg"
-              alt="Диалог клиента в Telegram и автоматическое создание сделки в Битрикс24"
-              width="900"
-              height="520"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
+          <figure class="hero__visual" aria-label="Пример: диалог в Telegram и сделка в Битрикс24">
+            <div class="hero-mockup">
+              <div class="hero-mockup__panel hero-mockup__panel--chat">
+                <p class="hero-mockup__meta">Telegram · 23:14</p>
+                <div class="hero-mockup__bubble hero-mockup__bubble--in">Здравствуйте, интересует квартира</div>
+                <div class="hero-mockup__bubble hero-mockup__bubble--bot">
+                  <span class="hero-mockup__bot-label">Datagent</span>
+                  Уточню бюджет и срок, передам менеджеру с брифом
+                </div>
+                <div class="hero-mockup__bubble hero-mockup__bubble--in">До 12 млн, в течение месяца</div>
+              </div>
+              <div class="hero-mockup__arrow" aria-hidden="true">
+                <span></span>
+              </div>
+              <div class="hero-mockup__panel hero-mockup__panel--crm">
+                <p class="hero-mockup__meta hero-mockup__meta--crm">Битрикс24 · Новая сделка</p>
+                <div class="hero-mockup__deal">
+                  <strong>Лид: квартира · Telegram</strong>
+                  <span>Статус: Квалификация · Менеджер: Алексей</span>
+                </div>
+                <div class="hero-mockup__chip">Бюджет до 12 млн</div>
+                <div class="hero-mockup__skeleton" aria-hidden="true"></div>
+                <div class="hero-mockup__skeleton hero-mockup__skeleton--short" aria-hidden="true"></div>
+                <span class="hero-mockup__task">Задача создана</span>
+              </div>
+            </div>
           </figure>
         </div>
       </section>
 
       <!-- [C] TRUST BAR -->
       <section class="trust-bar" aria-label="Преимущества">
-        <div class="container trust-bar__grid">
-          <div class="trust-bar__item">
-            <strong>5 мин</strong>
-            <span>настройка</span>
-          </div>
-          <div class="trust-bar__item">
-            <strong>Битрикс24 + Telegram</strong>
-            <span>готовые интеграции</span>
-          </div>
-          <div class="trust-bar__item">
-            <strong>GigaChat + YandexGPT</strong>
-            <span>российские LLM</span>
-          </div>
-          <div class="trust-bar__item">
-            <strong>Данные в РФ</strong>
-            <span>сервер в России</span>
-          </div>
+        <div class="container">
+          <ul class="trust-bar__grid">
+            <li class="trust-bar__item">
+              <span class="trust-bar__icon" aria-hidden="true">⚡</span>
+              <strong>5 мин</strong>
+              <span>настройка</span>
+            </li>
+            <li class="trust-bar__item">
+              <span class="trust-bar__icon" aria-hidden="true">🔗</span>
+              <strong>Битрикс24 + Telegram</strong>
+              <span>готовые интеграции</span>
+            </li>
+            <li class="trust-bar__item">
+              <span class="trust-bar__icon" aria-hidden="true">🇷🇺</span>
+              <strong>GigaChat + YandexGPT</strong>
+              <span>российские LLM</span>
+            </li>
+            <li class="trust-bar__item">
+              <span class="trust-bar__icon" aria-hidden="true">🔒</span>
+              <strong>Данные в РФ</strong>
+              <span>сервер в России</span>
+            </li>
+          </ul>
         </div>
       </section>
 

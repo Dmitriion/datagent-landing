@@ -31,6 +31,11 @@ body {
   line-height: 1.55;
   color: var(--color-text);
   background: var(--color-bg);
+  background-image: radial-gradient(
+    ellipse 120% 80% at 50% -20%,
+    color-mix(in oklch, var(--color-primary-soft) 35%, transparent),
+    transparent 50%
+  );
   accent-color: var(--color-primary);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
