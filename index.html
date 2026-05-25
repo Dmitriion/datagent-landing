@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Datagent — AI-оркестратор для автоматизации бизнес-процессов. Запросите демо и проверьте сценарии на ваших данных."
+    />
+    <title>Datagent — AI-оркестратор бизнес-процессов</title>
+
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/assets/css/tokens.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <!-- Яндекс.Метрика: замените 00000000 на ID счётчика -->
+    <!--
+    <script>
+      window.DATAGENT_METRIKA_ID = 00000000;
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) return;
+        }
+        (k = e.createElement(t)), (a = e.getElementsByTagName(t)[0]), (k.async = 1), (k.src = r), a.parentNode.insertBefore(k, a);
+      })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+      ym(window.DATAGENT_METRIKA_ID, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+    </script>
+    -->
+  </head>
+  <body>
+    <a class="sr-only" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="/" aria-label="Datagent — на главную">
+          <span class="brand__mark" aria-hidden="true">D</span>
+          <span>Datagent</span>
+        </a>
+        <div class="site-header__actions">
+          <button
+            type="button"
+            class="icon-btn"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Переключить тему"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+            </svg>
+          </button>
+          <a class="btn btn--primary" href="#demo" data-cta="demo">Запросить демо</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section" aria-labelledby="hero-title">
+        <div class="container hero__grid">
+          <div>
+            <p class="hero__badge">AI-оркестратор · без привязки к monorepo продукта</p>
+            <h1 id="hero-title">Автоматизируйте бизнес-процессы агентами, а не ручными скриптами</h1>
+            <p class="section__lead">
+              Datagent связывает ваши системы, запускает сценарии и держит процесс под контролем — от заявки до
+              отчёта. Гипотеза для кастдева: экономия 10+ часов в неделю на рутине команды.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#demo" data-cta="demo">Запросить демо</a>
+              <a class="btn btn--ghost" href="#solution">Как это работает</a>
+            </div>
+          </div>
+          <figure class="hero__visual">
+            <img
+              src="/assets/img/hero-product.svg"
+              alt="Схема интерфейса Datagent: оркестратор и активные агенты"
+              width="800"
+              height="500"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="problem section" id="problem" aria-labelledby="problem-title">
+        <div class="container">
+          <header class="section__header section__header--center">
+            <p class="section__eyebrow">Проблема</p>
+            <h2 id="problem-title">Что говорят команды до пилота</h2>
+            <p class="section__lead">
+              Формулировки из кастдева — обновляйте после каждых 5 интервью. Не полируйте копирайт до разговоров с
+              рынком.
+            </p>
+          </header>
+          <ul class="quote-list">
+            <li>
+              <article class="quote-card">
+                <blockquote>«Интеграции разъезжаются — каждый отдел тащит свой Excel и свой бот»</blockquote>
+                <cite>— Операционный директор, B2B SaaS</cite>
+              </article>
+            </li>
+            <li>
+              <article class="quote-card">
+                <blockquote>«Автоматизацию обещали год назад, а в проде всё ещё ручные чек-листы»</blockquote>
+                <cite>— Руководитель процессов, ритейл</cite>
+              </article>
+            </li>
+            <li>
+              <article class="quote-card">
+                <blockquote>«Нельзя отдать данные в чёрный ящик — нужен аудит каждого шага»</blockquote>
+                <cite>— CISO, финтех</cite>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="solution" aria-labelledby="solution-title">
+        <div class="container">
+          <header class="section__header section__header--center">
+            <p class="section__eyebrow">Решение</p>
+            <h2 id="solution-title">Три сценария, не десять фич</h2>
+            <p class="section__lead">Datagent оркестрирует агентов и интеграции вокруг ваших процессов.</p>
+          </header>
+          <ul class="scenario-grid">
+            <li>
+              <article class="scenario-card">
+                <span class="scenario-card__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M12 3v18M3 12h18"/></svg>
+                </span>
+                <h3>Онбординг клиента</h3>
+                <p>Соберите данные из CRM, проверьте договор, создайте задачи в таск-трекере — один сценарий.</p>
+              </article>
+            </li>
+            <li>
+              <article class="scenario-card">
+                <span class="scenario-card__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 5 5-9"/></svg>
+                </span>
+                <h3>Операционная отчётность</h3>
+                <p>Агенты подтягивают метрики, валидируют аномалии и отправляют сводку в Slack или email.</p>
+              </article>
+            </li>
+            <li>
+              <article class="scenario-card">
+                <span class="scenario-card__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </span>
+                <h3>Комплаенс и аудит</h3>
+                <p>Каждый шаг сценария логируется: кто запустил, какие данные затронуты, какой результат.</p>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="proof section" id="proof" aria-labelledby="proof-title">
+        <div class="container">
+          <header class="section__header section__header--center">
+            <p class="section__eyebrow">Социальное доказательство</p>
+            <h2 id="proof-title">Кейс появится после первого пилота</h2>
+          </header>
+          <div class="proof__card">
+            <blockquote>«Заглушка: сюда — цитата пилотного клиента и измеримый результат»</blockquote>
+            <p>Обновите блок, когда будет разрешение на публикацию имени и цифр.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+          <header class="section__header section__header--center">
+            <p class="section__eyebrow">Тарифы</p>
+            <h2 id="pricing-title">Пилот и коммерческое предложение</h2>
+          </header>
+          <div class="pricing-card">
+            <p class="pricing-card__price">По запросу</p>
+            <p class="section__lead" style="margin-top: 1rem">
+              Стоимость зависит от числа сценариев, интеграций и требований к on-prem / облаку.
+            </p>
+            <ul>
+              <li>Пилот на одном процессе за 2–4 недели</li>
+              <li>Настройка оркестратора и 1–3 агентов</li>
+              <li>Поддержка на период валидации гипотезы</li>
+            </ul>
+            <a class="btn btn--primary" href="#demo" style="margin-top: 1.5rem" data-cta="demo">
+              Запросить коммерческое предложение
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="faq-title">
+        <div class="container">
+          <header class="section__header section__header--center">
+            <p class="section__eyebrow">FAQ</p>
+            <h2 id="faq-title">Частые вопросы</h2>
+          </header>
+          <div class="faq">
+            <details>
+              <summary>Чем Datagent отличается от «просто ChatGPT»?</summary>
+              <div class="faq__body">
+                Оркестратор запускает цепочки шагов в ваших системах с политиками доступа и аудитом, а не разовые
+                ответы в чате.
+              </div>
+            </details>
+            <details>
+              <summary>Нужно ли менять текущий стек?</summary>
+              <div class="faq__body">
+                Нет. Подключаем CRM, ERP, таск-трекеры и базы через API. Продуктовый monorepo не затрагивается.
+              </div>
+            </details>
+            <details>
+              <summary>Где хранятся данные?</summary>
+              <div class="faq__body">
+                Облако или выделенный контур — по требованиям безопасности. Детали — в коммерческом предложении.
+              </div>
+            </details>
+            <details>
+              <summary>Сколько длится пилот?</summary>
+              <div class="faq__body">Обычно 2–4 недели на одном процессе с измеримой метрикой успеха.</div>
+            </details>
+            <details>
+              <summary>Кто владеет сценариями после пилота?</summary>
+              <div class="faq__body">
+                Ваша команда. Datagent передаёт документацию и обучение; дальше — подписка или расширение scope.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta section" id="demo" aria-labelledby="cta-title">
+        <div class="container">
+          <p class="section__eyebrow">Демо</p>
+          <h2 id="cta-title">Проверьте гипотезу на своём процессе</h2>
+          <p class="section__lead">
+            Оставьте контакт — вернёмся в течение 1 рабочего дня. Цель: ≥ 10 заявок за первые 30 дней.
+          </p>
+          <form class="cta-form" data-demo-form action="#" method="post" novalidate>
+            <label>
+              Имя
+              <input type="text" name="name" required autocomplete="name" placeholder="Как к вам обращаться" />
+            </label>
+            <label>
+              Email или телефон
+              <input
+                type="text"
+                name="contact"
+                required
+                autocomplete="email"
+                placeholder="you@company.ru"
+              />
+            </label>
+            <button type="submit" class="btn btn--primary" data-cta="demo">Запросить демо</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div>
+            <p class="brand" style="margin-bottom: 0.5rem">
+              <span class="brand__mark" aria-hidden="true">D</span>
+              Datagent
+            </p>
+            <p style="color: var(--color-text-muted); font-size: var(--text-small)">
+              AI-оркестратор для автоматизации бизнес-процессов
+            </p>
+          </div>
+          <div>
+            <p style="font-weight: 600; margin-bottom: 0.75rem">Контакты</p>
+            <p><a href="mailto:hello@datagent.ru">hello@datagent.ru</a></p>
+          </div>
+          <div>
+            <p style="font-weight: 600; margin-bottom: 0.75rem">Репозитории</p>
+            <p><a href="https://github.com/Dmitriion/datagent">Продукт (datagent)</a></p>
+            <p><a href="https://github.com/Dmitriion/datagent-landing">Лендинг</a></p>
+          </div>
+        </div>
+        <p class="site-footer__legal">
+          © 2026 Datagent. Код лендинга — MIT. Тексты и брендинг — All Rights Reserved. · Dmitrii Ionov
+        </p>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>
