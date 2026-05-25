@@ -98,8 +98,21 @@ function trackCtaClicks() {
   })
 }
 
+/** Sticky header shadow after scroll (MWG: shrinking-header pattern, lightweight) */
+function initHeaderScroll() {
+  const header = document.querySelector('[data-site-header]')
+  if (!header) return
+
+  const onScroll = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 80)
+  }
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+}
+
 function init() {
   initTheme()
+  initHeaderScroll()
   initDemoForm()
   trackCtaClicks()
 }
