@@ -379,6 +379,33 @@
   color: color-mix(in oklch, var(--color-text-inverse) 55%, transparent);
 }
 
+.cta-form .field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.cta-form .field__error {
+  display: none;
+  font-size: var(--text-small);
+  color: var(--color-error-bg);
+  gap: 0.35rem;
+  align-items: flex-start;
+}
+
+.cta-form .field__error::before {
+  content: '⚠ ';
+  flex-shrink: 0;
+}
+
+.cta-form input:user-invalid {
+  border-color: var(--color-error-bg);
+  background: color-mix(in oklch, var(--color-error) 35%, transparent);
+}
+
+.cta-form input:user-invalid + .field__error {
+  display: flex;
+}
+
 .cta-form .btn--primary {
   background: var(--color-text-inverse);
   color: var(--color-primary);

@@ -8,3 +8,5 @@ Thumbs.db
 
 node_modules/
 dist/
+
+# MWG install telemetry opt-out locally: DISABLE_TELEMETRY=1

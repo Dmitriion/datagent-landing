@@ -91,11 +91,16 @@ chmod +x scripts/test-env.sh
 
 ### Агентная разработка (Cursor)
 
+**Modern Web Guidance** (Google Chrome) установлен в репозиторий:
+
 ```bash
-npx modern-web-guidance@latest install
+npx modern-web-guidance@latest install   # обновить skill
 ```
 
-Правила — в `AGENTS.md`.
+- Skill: `.agents/skills/modern-web-guidance/`
+- Cursor: `.cursor/skills/modern-web-guidance`
+- Правило: `.cursor/rules/modern-web-guidance.mdc`
+- Перед HTML/CSS/JS: `search` → `retrieve` (см. `AGENTS.md`)
 
 ## Деплой в контейнере
 

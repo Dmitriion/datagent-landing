@@ -1,0 +1,16 @@
+---
+description: Modern Web Guidance — поиск best practices перед HTML/CSS/JS (Google Chrome)
+globs:
+  - "**/*.html"
+  - "**/*.css"
+  - "**/assets/js/**"
+alwaysApply: false
+---
+
+Перед изменением вёрстки или клиентского JS:
+
+1. Используй skill `modern-web-guidance` (`.agents/skills/modern-web-guidance/SKILL.md`).
+2. Выполни `npx -y modern-web-guidance@latest search "<задача>"` и `retrieve "<id>"`.
+3. Следуй гайдам: accessibility, forms `:user-invalid`, LCP `fetchpriority`, `color-scheme`, Baseline 2024.
+
+Не добавляй React, Tailwind или сборщики без явного запроса.

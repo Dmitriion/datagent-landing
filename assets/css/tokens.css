@@ -25,8 +25,10 @@
   --color-text-muted: #7a7974;
   --color-text-inverse: #f9f8f5;
 
-  /* Focus */
+  /* Focus & validation */
   --color-focus: oklch(0.5 0.12 192);
+  --color-error: oklch(0.55 0.2 25);
+  --color-error-bg: oklch(0.95 0.04 25);
 
   /* Typography families */
   --font-display: 'Cabinet Grotesk', system-ui, sans-serif;
