@@ -162,23 +162,33 @@ button {
   contain-intrinsic-size: auto 32rem;
 }
 
+/* Чередование секций — мягко, без «плитки» разных оттенков */
 .band--alt {
   background: var(--color-bg-alt);
 }
 
 .band--surface {
-  background: var(--color-surface);
+  background: var(--color-bg);
 }
 
-/* Shared elevated surface — pain, solution, flow, plan */
+.band--divider {
+  border-block: 1px solid var(--color-border);
+}
+
+/* Карточка на полотне — без hover по умолчанию (статичный контент) */
 .surface {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-surface-elevated);
-  box-shadow: var(--shadow-xs);
 }
 
-.surface:hover {
+.surface--lift {
+  box-shadow: var(--shadow-sm);
+}
+
+a.surface:hover,
+button.surface:hover,
+.surface--interactive:hover {
   border-color: var(--color-border-strong);
   box-shadow: var(--shadow-sm);
 }
