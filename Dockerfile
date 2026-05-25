@@ -1,7 +1,6 @@
 FROM nginx:1.27-alpine
 
-RUN rm /etc/nginx/conf.d/default.conf
-
+# Перезаписываем штатный default.conf без отдельного RUN (совместимость с vfs/ограниченными средами)
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY index.html /usr/share/nginx/html/index.html
 COPY assets /usr/share/nginx/html/assets/

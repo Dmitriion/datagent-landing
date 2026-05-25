@@ -76,6 +76,19 @@ docker compose up --build
 docker compose down
 ```
 
+### Тестовая среда в Cursor Cloud
+
+В облаке агента Docker build/run может быть недоступен (overlay). Используйте скрипт — он поднимет **nginx на хосте** с тем же `root`, что и контейнер:
+
+```bash
+chmod +x scripts/test-env.sh
+./scripts/test-env.sh start
+# → http://127.0.0.1:8080/
+./scripts/test-env.sh stop
+```
+
+Конфиг: `docker/nginx.dev.conf`. Для Cursor при открытии репозитория см. `.cursor/environment.json`.
+
 ### Агентная разработка (Cursor)
 
 ```bash

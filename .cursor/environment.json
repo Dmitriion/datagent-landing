@@ -1,0 +1,10 @@
+{
+  "install": "sudo apt-get update -qq && sudo apt-get install -y -qq nginx docker.io 2>/dev/null || sudo apt-get install -y -qq nginx",
+  "start": "chmod +x scripts/test-env.sh && LANDING_TEST_MODE=host scripts/test-env.sh start",
+  "terminals": [
+    {
+      "name": "datagent-landing",
+      "command": "chmod +x scripts/test-env.sh && LANDING_TEST_MODE=host scripts/test-env.sh start && echo 'Test landing: http://localhost:8080' && tail -f /tmp/datagent-nginx-error.log"
+    }
+  ]
+}
