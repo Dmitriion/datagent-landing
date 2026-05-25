@@ -104,6 +104,12 @@ chmod +x scripts/test-env.sh
 
 Конфиг: `.cursor/environment.json` → `install` + `start` + терминал `datagent-landing`.
 
+**Cloud Desktop (без проброса на ПК):** лендинг на `http://127.0.0.1:8080/` внутри облачного Chrome:
+
+```bash
+./scripts/open-cloud-browser.sh
+```
+
 ### Агентная разработка (Cursor)
 
 **Modern Web Guidance** (Google Chrome) установлен в репозиторий:
