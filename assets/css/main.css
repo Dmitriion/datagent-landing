@@ -50,23 +50,17 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-sm);
+  flex-shrink: 0;
   text-decoration: none;
-  color: var(--color-text);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: var(--text-ui);
 }
 
-.brand__mark {
-  display: grid;
-  place-items: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: var(--radius-sm);
-  background: var(--color-primary);
-  color: var(--color-text-inverse);
-  font-size: 0.9rem;
+.brand__logo {
+  display: block;
+  height: 2rem;
+  width: auto;
+  max-width: min(9.5rem, 38vw);
+  object-fit: contain;
+  object-position: left center;
 }
 
 .site-header__actions {

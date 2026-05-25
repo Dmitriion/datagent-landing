@@ -5,6 +5,17 @@
 
 const STORAGE_THEME = 'datagent-theme'
 
+const BRAND_ASSETS = {
+  light: {
+    favicon: '/assets/img/brand/favicon-light.svg',
+    logo: '/assets/img/brand/logo-light.svg',
+  },
+  dark: {
+    favicon: '/assets/img/brand/favicon-dark.svg',
+    logo: '/assets/img/brand/logo-dark.svg',
+  },
+}
+
 function getPreferredTheme() {
   const stored = localStorage.getItem(STORAGE_THEME)
   if (stored === 'light' || stored === 'dark') return stored
@@ -16,9 +27,17 @@ const THEME_ICON_MOON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme)
+  const isDark = theme === 'dark'
+  const assets = isDark ? BRAND_ASSETS.dark : BRAND_ASSETS.light
+
+  const favicon = document.querySelector('link[data-favicon]')
+  if (favicon) favicon.href = assets.favicon
+
+  const logo = document.querySelector('[data-brand-logo]')
+  if (logo) logo.src = assets.logo
+
   const toggle = document.querySelector('[data-theme-toggle]')
   if (toggle) {
-    const isDark = theme === 'dark'
     toggle.setAttribute('aria-pressed', String(isDark))
     toggle.setAttribute('aria-label', isDark ? 'Включить светлую тему' : 'Включить тёмную тему')
     toggle.innerHTML = isDark ? THEME_ICON_SUN : THEME_ICON_MOON
