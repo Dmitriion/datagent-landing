@@ -288,6 +288,13 @@
   gap: 0.15rem;
 }
 
+@media (min-width: 36rem) {
+  .hero__proof li:not(:last-child) {
+    padding-right: var(--space-lg);
+    border-right: 1px solid color-mix(in oklch, var(--color-text-inverse) 14%, transparent);
+  }
+}
+
 .hero__proof strong {
   font-family: var(--font-display);
   font-size: 1.125rem;
@@ -306,6 +313,8 @@
 }
 
 .hero__actions {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
@@ -318,12 +327,64 @@
 
 .hero__visual {
   margin: 0;
+}
+
+/* Product preview frame (Lazyweb: Intercom / Replit hero patterns) */
+.hero-frame {
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid color-mix(in oklch, var(--color-text-inverse) 12%, transparent);
   box-shadow:
     0 32px 64px -24px oklch(0.05 0.02 250 / 0.65),
-    0 0 0 1px color-mix(in oklch, var(--color-primary) 25%, transparent) inset;
+    0 0 0 1px color-mix(in oklch, var(--color-primary) 22%, transparent) inset;
+  background: oklch(0.12 0.02 250);
+}
+
+.hero-frame__chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.85rem;
+  border-bottom: 1px solid color-mix(in oklch, var(--color-text-inverse) 8%, transparent);
+  background: oklch(0.1 0.02 250);
+}
+
+.hero-frame__dots {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.hero-frame__dots i {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: oklch(0.38 0.03 250);
+}
+
+.hero-frame__dots i:nth-child(1) {
+  background: oklch(0.62 0.14 25);
+}
+
+.hero-frame__dots i:nth-child(2) {
+  background: oklch(0.72 0.12 85);
+}
+
+.hero-frame__dots i:nth-child(3) {
+  background: oklch(0.55 0.1 145);
+}
+
+.hero-frame__title {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: color-mix(in oklch, var(--color-text-inverse) 50%, transparent);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Hero product mockup — chat + CRM (SaaS onboarding pattern) */
@@ -331,9 +392,9 @@
   display: grid;
   gap: var(--space-md);
   padding: var(--space-lg);
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   background: oklch(0.14 0.02 250);
-  border: 1px solid color-mix(in oklch, var(--color-text-inverse) 10%, transparent);
+  border: none;
 }
 
 @media (min-width: 44rem) {
@@ -759,13 +820,18 @@
   font-size: var(--text-small);
 }
 
-/* Launch flow — horizontal timeline in panel */
+/* Launch flow — horizontal timeline in panel (Remote / Appcues pattern) */
 .flow-panel {
   padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
   border-radius: var(--radius-xl);
+  background: linear-gradient(
+    165deg,
+    color-mix(in oklch, var(--color-primary-soft) 35%, var(--color-surface-elevated)) 0%,
+    var(--color-surface-elevated) 42%
+  );
+  border: 1px solid color-mix(in oklch, var(--color-primary) 18%, var(--color-border));
 }
 
-/* Launch flow — horizontal timeline */
 .flow {
   list-style: none;
   margin: 0;
@@ -774,22 +840,25 @@
   gap: var(--space-lg);
 }
 
+.flow__connector {
+  display: none;
+}
+
 @media (min-width: 52rem) {
   .flow {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-md);
-    position: relative;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 0 var(--space-sm);
+    align-items: start;
   }
 
-  .flow::before {
-    content: '';
-    position: absolute;
-    top: 1.35rem;
-    left: 12%;
-    right: 12%;
+  .flow__connector {
+    display: block;
+    align-self: start;
+    margin-top: 1.35rem;
+    width: 2.5rem;
     height: 2px;
-    background: linear-gradient(90deg, var(--color-border), var(--color-primary-soft), var(--color-border));
-    z-index: 0;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-border));
+    border-radius: var(--radius-pill);
   }
 }
 
@@ -833,6 +902,15 @@
   }
 }
 
+.flow__label {
+  margin: 0 0 0.25rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
 .flow__body h3 {
   font-family: var(--font-display);
   font-size: var(--text-body);
@@ -846,13 +924,56 @@
   line-height: 1.55;
 }
 
-/* Pricing — SaaS plan cards */
+/* Pricing — SaaS plan cards (Canva-style billing hint) */
 .pricing__disclaimer {
   font-size: var(--text-small);
   color: var(--color-text-muted);
 }
 
+.pricing-billing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm) var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.pricing-billing__label {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.pricing-billing__toggle {
+  display: inline-flex;
+  padding: 0.2rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+}
+
+.pricing-billing__option {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.pricing-billing__option.is-active {
+  background: var(--color-surface-elevated);
+  color: var(--color-text);
+  box-shadow: var(--shadow-xs);
+}
+
+.pricing-billing__option--muted {
+  opacity: 0.85;
+}
+
 .pricing-grid {
+  position: relative;
   display: grid;
   gap: var(--space-lg);
   align-items: stretch;
@@ -888,8 +1009,10 @@
 
 @media (min-width: 56rem) {
   .plan--featured {
-    margin-block: -0.35rem;
-    padding-block: calc(var(--space-xl) + 0.35rem);
+    margin-block: -0.5rem;
+    padding-block: calc(var(--space-xl) + 0.5rem);
+    z-index: 1;
+    box-shadow: var(--shadow-lg);
   }
 }
 

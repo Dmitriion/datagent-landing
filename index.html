@@ -102,7 +102,12 @@
             </ul>
           </div>
           <figure class="hero__visual" aria-label="Пример: диалог в Telegram и карточка в CRM">
-            <div class="hero-mockup">
+            <div class="hero-frame">
+              <div class="hero-frame__chrome" aria-hidden="true">
+                <span class="hero-frame__dots"><i></i><i></i><i></i></span>
+                <span class="hero-frame__title">Datagent · превью</span>
+              </div>
+              <div class="hero-mockup">
               <div class="hero-mockup__chat">
                 <div class="hero-mockup__chat-bar">
                   <span class="hero-mockup__avatar" aria-hidden="true">К</span>
@@ -152,6 +157,7 @@
                 </dl>
                 <p class="hero-mockup__crm-task">Задача: перезвонить до 10:00</p>
               </div>
+            </div>
             </div>
           </figure>
         </div>
@@ -283,20 +289,25 @@
             <li class="flow__step">
               <div class="flow__marker" aria-hidden="true">1</div>
               <div class="flow__body">
+                <p class="flow__label">Шаг 1</p>
                 <h3>Подключите инструменты</h3>
                 <p>CRM, Telegram и другие каналы — через готовые интеграции и OAuth.</p>
               </div>
             </li>
+            <li class="flow__connector" aria-hidden="true"></li>
             <li class="flow__step">
               <div class="flow__marker" aria-hidden="true">2</div>
               <div class="flow__body">
+                <p class="flow__label">Шаг 2</p>
                 <h3>Задайте сценарии</h3>
                 <p>Кто отвечает, в какое время, когда звать менеджера — в визуальном редакторе.</p>
               </div>
             </li>
+            <li class="flow__connector" aria-hidden="true"></li>
             <li class="flow__step">
               <div class="flow__marker" aria-hidden="true">3</div>
               <div class="flow__body">
+                <p class="flow__label">Шаг 3</p>
                 <h3>Агент работает сам</h3>
                 <p>Ответы клиентам, карточки в CRM и уведомления команде — без ручного копирования.</p>
               </div>
@@ -315,6 +326,13 @@
             <p class="section__lead pricing__disclaimer">
               Цены — ориентир для кастдева. На демо подберём план под ваш объём.
             </p>
+            <div class="pricing-billing" role="group" aria-label="Период оплаты">
+              <span class="pricing-billing__label">Оплата</span>
+              <div class="pricing-billing__toggle">
+                <span class="pricing-billing__option is-active" aria-current="true">Месяц</span>
+                <span class="pricing-billing__option pricing-billing__option--muted">Год −15%</span>
+              </div>
+            </div>
           </header>
           <div class="pricing-grid" role="list">
             <article class="plan surface" role="listitem">
