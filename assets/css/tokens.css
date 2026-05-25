@@ -1,0 +1,103 @@
+/**
+ * Datagent landing — design tokens
+ * Baseline 2024 · OKLCH + fluid type via clamp()
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --color-bg: #f7f6f2;
+  --color-surface: #f9f8f5;
+  --color-surface-elevated: #ffffff;
+  --color-border: oklch(0.88 0.01 95);
+
+  /* Primary — Hydra Teal */
+  --color-primary: oklch(0.42 0.08 192);
+  --color-primary-hover: oklch(0.34 0.08 192);
+  --color-primary-soft: oklch(0.92 0.04 192);
+
+  /* Accent */
+  --color-accent: oklch(0.72 0.14 75);
+
+  /* Text */
+  --color-text: #28251d;
+  --color-text-muted: #7a7974;
+  --color-text-inverse: #f9f8f5;
+
+  /* Focus */
+  --color-focus: oklch(0.5 0.12 192);
+
+  /* Typography families */
+  --font-display: 'Cabinet Grotesk', system-ui, sans-serif;
+  --font-body: 'Satoshi', system-ui, sans-serif;
+
+  /* Fluid type scale */
+  --text-display: clamp(2.5rem, 1rem + 4vw, 5rem);
+  --text-h2: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --text-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-ui: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-small: clamp(0.8125rem, 0.78rem + 0.2vw, 0.9375rem);
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-section: clamp(3.5rem, 2rem + 5vw, 6rem);
+
+  /* Layout */
+  --container: min(72rem, 100% - 2rem);
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 200ms;
+  --shadow-soft: 0 24px 48px -28px oklch(0.25 0.02 95 / 0.35);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg: oklch(0.18 0.02 95);
+  --color-surface: oklch(0.22 0.02 95);
+  --color-surface-elevated: oklch(0.26 0.02 95);
+  --color-border: oklch(0.32 0.02 95);
+
+  --color-primary: oklch(0.62 0.1 192);
+  --color-primary-hover: oklch(0.72 0.1 192);
+  --color-primary-soft: oklch(0.28 0.04 192);
+
+  --color-text: oklch(0.94 0.01 95);
+  --color-text-muted: oklch(0.72 0.02 95);
+  --color-text-inverse: oklch(0.18 0.02 95);
+
+  --shadow-soft: 0 24px 48px -28px oklch(0.05 0 0 / 0.55);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --color-bg: oklch(0.18 0.02 95);
+    --color-surface: oklch(0.22 0.02 95);
+    --color-surface-elevated: oklch(0.26 0.02 95);
+    --color-border: oklch(0.32 0.02 95);
+
+    --color-primary: oklch(0.62 0.1 192);
+    --color-primary-hover: oklch(0.72 0.1 192);
+    --color-primary-soft: oklch(0.28 0.04 192);
+
+    --color-text: oklch(0.94 0.01 95);
+    --color-text-muted: oklch(0.72 0.02 95);
+    --color-text-inverse: oklch(0.18 0.02 95);
+
+    --shadow-soft: 0 24px 48px -28px oklch(0.05 0 0 / 0.55);
+  }
+}
