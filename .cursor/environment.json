@@ -1,6 +1,6 @@
 {
   "install": "sudo apt-get update -qq && sudo apt-get install -y -qq nginx curl 2>/dev/null; chmod +x scripts/*.sh",
-  "start": "cd /workspace && ./scripts/cloud-dev-up.sh start",
+  "start": "cd /workspace && git pull --ff-only origin main 2>/dev/null || true && ./scripts/cloud-dev-refresh.sh --no-pull",
   "terminals": [
     {
       "name": "datagent-landing",

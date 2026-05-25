@@ -28,7 +28,12 @@ is_running() {
 print_urls() {
   echo "=== Datagent landing (dev) ==="
   echo "port=${PORT}"
+  if [ -d "${ROOT}/.git" ]; then
+    echo "revision=$(git -C "${ROOT}" log -1 --format='%h %s' 2>/dev/null || echo unknown)"
+  fi
   echo "url_local=http://127.0.0.1:${PORT}/"
+  echo "refresh: ./scripts/cloud-dev-refresh.sh"
+  echo "browser: ./scripts/open-cloud-browser.sh"
   echo "Cursor: Ports → Forward ${PORT} → Open in Browser"
   for ip in $(hostname -I 2>/dev/null); do
     [[ "$ip" == "127.0.0.1" ]] && continue

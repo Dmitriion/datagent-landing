@@ -110,6 +110,16 @@ chmod +x scripts/test-env.sh
 ./scripts/open-cloud-browser.sh
 ```
 
+**Обновить стенд после merge / правок дизайна** (pull + перезапуск nginx, без кэша assets в dev):
+
+```bash
+./scripts/cloud-dev-refresh.sh          # git pull + restart
+./scripts/cloud-dev-refresh.sh --open # + открыть браузер в облаке
+./scripts/cloud-dev-refresh.sh --no-pull   # только restart (уже на актуальном коде)
+```
+
+После изменения CSS: **Ctrl+Shift+R** в браузере Cloud Desktop. Dev-nginx отдаёт `/assets/` с `Cache-Control: no-store`.
+
 ### Агентная разработка (Cursor)
 
 **Modern Web Guidance** (Google Chrome) установлен в репозиторий:
