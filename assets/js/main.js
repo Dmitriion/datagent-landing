@@ -6,14 +6,8 @@
 const STORAGE_THEME = 'datagent-theme'
 
 const BRAND_ASSETS = {
-  light: {
-    favicon: '/assets/img/brand/favicon-light.svg',
-    logo: '/assets/img/brand/logo-light.svg',
-  },
-  dark: {
-    favicon: '/assets/img/brand/favicon-dark.svg',
-    logo: '/assets/img/brand/logo-dark.svg',
-  },
+  light: { favicon: '/assets/img/brand/favicon-light.svg' },
+  dark: { favicon: '/assets/img/brand/favicon-dark.svg' },
 }
 
 function getPreferredTheme() {
@@ -32,9 +26,6 @@ function applyTheme(theme) {
 
   const favicon = document.querySelector('link[data-favicon]')
   if (favicon) favicon.href = assets.favicon
-
-  const logo = document.querySelector('[data-brand-logo]')
-  if (logo) logo.src = assets.logo
 
   const toggle = document.querySelector('[data-theme-toggle]')
   if (toggle) {

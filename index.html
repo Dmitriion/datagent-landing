@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Datagent — AI-ассистент для команд на Битрикс24. Отвечает в Telegram, квалифицирует лиды и создаёт сделки в CRM. Данные в РФ."
+      content="Datagent — AI для команд. Автоматизирует переписку, CRM и задачи. Интеграции с Telegram и Битрикс24. Данные в РФ."
     />
-    <title>Datagent — AI-ассистент для Битрикс24 и Telegram</title>
+    <title>Datagent — AI для команд</title>
 
     <link
       rel="icon"
@@ -17,10 +17,10 @@
     />
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Datagent — AI-ассистент для Битрикс24" />
+    <meta property="og:title" content="Datagent — AI для команд" />
     <meta
       property="og:description"
-      content="Лиды не теряются ночью: Telegram + Битрикс24 + российские LLM."
+      content="Лиды не теряются ночью: AI-агент для команды, CRM и мессенджеры, данные в РФ."
     />
     <meta property="og:locale" content="ru_RU" />
 
@@ -38,15 +38,10 @@
     <header class="site-header" data-site-header>
       <div class="container site-header__inner">
         <a class="brand" href="/" aria-label="Datagent — на главную">
-          <img
-            class="brand__logo"
-            src="/assets/img/brand/logo-light.svg"
-            alt="Datagent"
-            width="128"
-            height="32"
-            decoding="async"
-            data-brand-logo
-          />
+          <span class="brand__icon" aria-hidden="true">
+            <img src="/assets/img/brand/mark-header.svg" alt="" width="28" height="28" decoding="async" />
+          </span>
+          <span class="brand__wordmark">Datagent</span>
         </a>
 
         <nav class="site-nav" aria-label="Основная навигация">
@@ -80,44 +75,69 @@
           <div class="hero__copy">
             <p class="hero__badge">
               <span class="hero__badge-item">Сделано в России</span>
-              <span class="hero__badge-item">GigaChat</span>
-              <span class="hero__badge-item">YandexGPT</span>
-              <span class="hero__badge-item">Битрикс24</span>
+              <span class="hero__badge-item">GigaChat · YandexGPT</span>
+              <span class="hero__badge-item">CRM и мессенджеры</span>
             </p>
-            <h1 id="hero-title">Ваш AI-ассистент для команд на Битрикс24</h1>
+            <h1 id="hero-title">AI для вашей команды — без потери лидов ночью</h1>
             <p class="hero__subline">
-              Datagent подключается к вашему CRM и Telegram. Отвечает клиентам, квалифицирует лиды
-              и ставит задачи — пока вы спите.
+              Datagent отвечает клиентам, квалифицирует заявки и ведёт CRM. Подключается к Telegram,
+              Битрикс24 и другим инструментам — пока команда offline.
             </p>
             <div class="hero__actions">
               <a class="btn btn--primary btn--on-dark" href="#demo" data-cta="demo">Запросить демо</a>
               <a class="btn btn--ghost btn--on-dark" href="#how-it-works">Смотреть как работает</a>
             </div>
           </div>
-          <figure class="hero__visual" aria-label="Пример: диалог в Telegram и сделка в Битрикс24">
+          <figure class="hero__visual" aria-label="Пример: диалог в Telegram и карточка в CRM">
             <div class="hero-mockup">
-              <div class="hero-mockup__panel hero-mockup__panel--chat">
-                <p class="hero-mockup__meta">Telegram · 23:14</p>
-                <div class="hero-mockup__bubble hero-mockup__bubble--in">Здравствуйте, интересует квартира</div>
-                <div class="hero-mockup__bubble hero-mockup__bubble--bot">
-                  <span class="hero-mockup__bot-label">Datagent</span>
-                  Уточню бюджет и срок, передам менеджеру с брифом
+              <div class="hero-mockup__chat">
+                <div class="hero-mockup__chat-bar">
+                  <span class="hero-mockup__avatar" aria-hidden="true">К</span>
+                  <div>
+                    <strong>Клиент</strong>
+                    <span>Telegram · 23:14</span>
+                  </div>
                 </div>
-                <div class="hero-mockup__bubble hero-mockup__bubble--in">До 12 млн, в течение месяца</div>
-              </div>
-              <div class="hero-mockup__arrow" aria-hidden="true">
-                <span></span>
-              </div>
-              <div class="hero-mockup__panel hero-mockup__panel--crm">
-                <p class="hero-mockup__meta hero-mockup__meta--crm">Битрикс24 · Новая сделка</p>
-                <div class="hero-mockup__deal">
-                  <strong>Лид: квартира · Telegram</strong>
-                  <span>Статус: Квалификация · Менеджер: Алексей</span>
+                <div class="hero-mockup__thread">
+                  <div class="hero-mockup__msg hero-mockup__msg--in">
+                    <p>Здравствуйте! Интересует квартира в центре.</p>
+                    <time>23:14</time>
+                  </div>
+                  <div class="hero-mockup__msg hero-mockup__msg--out">
+                    <span class="hero-mockup__msg-label">Datagent</span>
+                    <p>Добрый вечер! Уточню бюджет и срок — и передам менеджеру с брифом.</p>
+                    <time>23:14</time>
+                  </div>
+                  <div class="hero-mockup__msg hero-mockup__msg--in">
+                    <p>До 12 млн, нужно в течение месяца.</p>
+                    <time>23:15</time>
+                  </div>
                 </div>
-                <div class="hero-mockup__chip">Бюджет до 12 млн</div>
-                <div class="hero-mockup__skeleton" aria-hidden="true"></div>
-                <div class="hero-mockup__skeleton hero-mockup__skeleton--short" aria-hidden="true"></div>
-                <span class="hero-mockup__task">Задача создана</span>
+              </div>
+              <div class="hero-mockup__bridge" aria-hidden="true">
+                <span class="hero-mockup__bridge-line"></span>
+                <span class="hero-mockup__bridge-label">в CRM</span>
+              </div>
+              <div class="hero-mockup__crm">
+                <div class="hero-mockup__crm-head">
+                  <span>Новая сделка</span>
+                  <strong>Квалификация</strong>
+                </div>
+                <dl class="hero-mockup__crm-fields">
+                  <div>
+                    <dt>Источник</dt>
+                    <dd>Telegram</dd>
+                  </div>
+                  <div>
+                    <dt>Бюджет</dt>
+                    <dd>до 12 млн ₽</dd>
+                  </div>
+                  <div>
+                    <dt>Менеджер</dt>
+                    <dd>Алексей</dd>
+                  </div>
+                </dl>
+                <p class="hero-mockup__crm-task">Задача: перезвонить до 10:00</p>
               </div>
             </div>
           </figure>
@@ -135,8 +155,8 @@
             </li>
             <li class="trust-bar__item">
               <span class="trust-bar__icon" aria-hidden="true">🔗</span>
-              <strong>Битрикс24 + Telegram</strong>
-              <span>готовые интеграции</span>
+              <strong>CRM + мессенджеры</strong>
+              <span>Битрикс24, Telegram</span>
             </li>
             <li class="trust-bar__item">
               <span class="trust-bar__icon" aria-hidden="true">🇷🇺</span>
@@ -197,31 +217,39 @@
           <ul class="scenario-grid">
             <li>
               <article class="scenario-card">
-                <p class="scenario-card__result">0 потерянных лидов из мессенджеров</p>
-                <h3>Отвечает в Telegram автоматически</h3>
+                <div class="scenario-card__head">
+                  <span class="scenario-card__index" aria-hidden="true">01</span>
+                  <span class="scenario-card__result">0 потерянных лидов</span>
+                </div>
+                <h3>Отвечает в мессенджерах 24/7</h3>
                 <p>
-                  Клиент пишет в любое время. Datagent отвечает, задаёт нужные вопросы и передаёт
-                  горячий лид менеджеру с готовым брифом.
+                  Клиент пишет в любое время. Агент отвечает, задаёт уточняющие вопросы и передаёт
+                  менеджеру готовый бриф.
                 </p>
               </article>
             </li>
             <li>
               <article class="scenario-card">
-                <p class="scenario-card__result">−3 часа ручной работы в день</p>
-                <h3>Создаёт сделки в Битрикс24 сам</h3>
+                <div class="scenario-card__head">
+                  <span class="scenario-card__index" aria-hidden="true">02</span>
+                  <span class="scenario-card__result">−3 ч рутины в день</span>
+                </div>
+                <h3>Ведёт CRM без ручного ввода</h3>
                 <p>
-                  Данные из диалога → в сделку → на нужного менеджера. Задачи, напоминания,
-                  статусы — автоматически.
+                  Диалог → сделка → ответственный. Задачи, напоминания и статусы обновляются
+                  автоматически, в том числе в Битрикс24.
                 </p>
               </article>
             </li>
             <li>
               <article class="scenario-card">
-                <p class="scenario-card__result">Контроль и автоматизация</p>
-                <h3>Вы видите всё, что происходит</h3>
+                <div class="scenario-card__head">
+                  <span class="scenario-card__index" aria-hidden="true">03</span>
+                  <span class="scenario-card__result">Полный контроль</span>
+                </div>
+                <h3>Прозрачная история действий</h3>
                 <p>
-                  Каждое действие агента — в истории. Для чувствительных шагов — подтверждение.
-                  Никаких сюрпризов без вашего ведома.
+                  Каждый шаг агента в логе. Чувствительные операции — только с вашим подтверждением.
                 </p>
               </article>
             </li>
@@ -233,23 +261,31 @@
       <section class="section section--muted" id="how-it-works" aria-labelledby="how-title">
         <div class="container">
           <header class="section__header section__header--center">
+            <p class="section__eyebrow">Старт</p>
             <h2 id="how-title">Запуск за 5 минут</h2>
+            <p class="section__lead">Без разработчика: подключили инструменты — задали правила — агент в работе.</p>
           </header>
-          <ol class="steps">
-            <li class="steps__item">
-              <span class="steps__num" aria-hidden="true">1</span>
-              <h3>Подключаете Битрикс24</h3>
-              <p>Одна ссылка. Авторизуетесь. Готово.</p>
+          <ol class="flow">
+            <li class="flow__step">
+              <div class="flow__marker" aria-hidden="true">1</div>
+              <div class="flow__body">
+                <h3>Подключите инструменты</h3>
+                <p>CRM, Telegram и другие каналы — через готовые интеграции и OAuth.</p>
+              </div>
             </li>
-            <li class="steps__item">
-              <span class="steps__num" aria-hidden="true">2</span>
-              <h3>Настраиваете сценарии</h3>
-              <p>Кто отвечает, когда, на какие вопросы — без программиста.</p>
+            <li class="flow__step">
+              <div class="flow__marker" aria-hidden="true">2</div>
+              <div class="flow__body">
+                <h3>Задайте сценарии</h3>
+                <p>Кто отвечает, в какое время, когда звать менеджера — в визуальном редакторе.</p>
+              </div>
             </li>
-            <li class="steps__item">
-              <span class="steps__num" aria-hidden="true">3</span>
-              <h3>Всё работает само</h3>
-              <p>Агент отвечает, создаёт сделки и уведомляет вас.</p>
+            <li class="flow__step">
+              <div class="flow__marker" aria-hidden="true">3</div>
+              <div class="flow__body">
+                <h3>Агент работает сам</h3>
+                <p>Ответы клиентам, карточки в CRM и уведомления команде — без ручного копирования.</p>
+              </div>
             </li>
           </ol>
         </div>
@@ -259,42 +295,58 @@
       <section class="section" id="pricing" aria-labelledby="pricing-title">
         <div class="container">
           <header class="section__header section__header--center">
-            <h2 id="pricing-title">Простые тарифы. Без скрытых платежей.</h2>
+            <p class="section__eyebrow">Тарифы</p>
+            <h2 id="pricing-title">Прозрачные планы для команды</h2>
             <p class="section__lead pricing__disclaimer">
-              Цены — гипотеза для кастдева. Уточняются на демо.
+              Цены — ориентир для кастдева. На демо подберём план под ваш объём.
             </p>
           </header>
           <div class="pricing-grid" role="list">
-            <article class="pricing-tier" role="listitem">
-              <h3 class="pricing-tier__name">Старт</h3>
-              <p class="pricing-tier__price">9 990 ₽<span>/мес</span></p>
-              <ul class="pricing-tier__features">
-                <li>500 диалогов / мес</li>
-                <li>Битрикс24 + Telegram</li>
+            <article class="plan" role="listitem">
+              <header class="plan__header">
+                <h3 class="plan__name">Старт</h3>
+                <p class="plan__desc">Для небольшой команды и пилота</p>
+              </header>
+              <p class="plan__price"><span class="plan__amount">9 990 ₽</span><span class="plan__period">/ мес</span></p>
+              <ul class="plan__features">
+                <li>500 диалогов в месяц</li>
+                <li>CRM + Telegram</li>
                 <li>GigaChat / YandexGPT</li>
               </ul>
-              <a class="btn btn--ghost btn--block" href="#demo" data-cta="demo">Попробовать</a>
+              <footer class="plan__footer">
+                <a class="btn btn--ghost btn--block" href="#demo" data-cta="demo">Попробовать</a>
+              </footer>
             </article>
-            <article class="pricing-tier pricing-tier--featured" role="listitem">
-              <p class="pricing-tier__badge">Популярный</p>
-              <h3 class="pricing-tier__name">Бизнес</h3>
-              <p class="pricing-tier__price">24 990 ₽<span>/мес</span></p>
-              <ul class="pricing-tier__features">
-                <li>3 000 диалогов / мес</li>
+            <article class="plan plan--featured" role="listitem">
+              <p class="plan__badge">Рекомендуем</p>
+              <header class="plan__header">
+                <h3 class="plan__name">Бизнес</h3>
+                <p class="plan__desc">Для отдела продаж с потоком лидов</p>
+              </header>
+              <p class="plan__price"><span class="plan__amount">24 990 ₽</span><span class="plan__period">/ мес</span></p>
+              <ul class="plan__features">
+                <li>3 000 диалогов в месяц</li>
                 <li>Кастомные сценарии</li>
-                <li>Приоритетная настройка</li>
+                <li>Помощь с настройкой</li>
               </ul>
-              <a class="btn btn--primary btn--block" href="#demo" data-cta="demo">Запросить демо</a>
+              <footer class="plan__footer">
+                <a class="btn btn--primary btn--block" href="#demo" data-cta="demo">Запросить демо</a>
+              </footer>
             </article>
-            <article class="pricing-tier" role="listitem">
-              <h3 class="pricing-tier__name">Команда</h3>
-              <p class="pricing-tier__price">Индивидуально</p>
-              <ul class="pricing-tier__features">
+            <article class="plan" role="listitem">
+              <header class="plan__header">
+                <h3 class="plan__name">Команда</h3>
+                <p class="plan__desc">Несколько воронок и без лимитов</p>
+              </header>
+              <p class="plan__price plan__price--custom"><span class="plan__amount">По запросу</span></p>
+              <ul class="plan__features">
                 <li>Без лимита диалогов</li>
-                <li>Несколько воронок</li>
+                <li>Несколько команд и воронок</li>
                 <li>Приоритетная поддержка</li>
               </ul>
-              <a class="btn btn--ghost btn--block" href="#demo" data-cta="demo">Обсудить</a>
+              <footer class="plan__footer">
+                <a class="btn btn--ghost btn--block" href="#demo" data-cta="demo">Обсудить</a>
+              </footer>
             </article>
           </div>
           <p class="pricing__footer">
@@ -354,7 +406,7 @@
         <div class="container cta__inner">
           <h2 id="cta-title">Готовы перестать терять лиды ночью?</h2>
           <p class="cta__lead">
-            Покажем, как Datagent работает с вашим Битрикс24 — за 30 минут.
+            Покажем Datagent на ваших сценариях — за 30 минут, без обязательств.
           </p>
           <form class="cta-form" id="demo-form" data-demo-form action="#" method="post" novalidate>
             <div class="cta-form__row">
